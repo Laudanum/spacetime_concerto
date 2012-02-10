@@ -33,7 +33,7 @@ libraries[ckeditor][download][type] = "get"
 libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.4.2/ckeditor_3.4.2.tar.gz"
 
 ; features for webform
-; projects[uuid][subdir] = "contrib"
+projects[uuid][subdir] = "contrib"
 ; projects[uuid_features][subdir] = "contrib"
 projects[node_export][subdir] = "contrib"
 

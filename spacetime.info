@@ -57,6 +57,7 @@ dependencies[] = plupload
 dependencies[] = rules
 dependencies[] = entity
 dependencies[] = addressfield
+dependencies[] = uuid
 
 ; commerce
 dependencies[] = commerce
