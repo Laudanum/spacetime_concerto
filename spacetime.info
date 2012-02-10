@@ -56,7 +56,7 @@ dependencies[] = plupload
 ; dependencies for commerce
 dependencies[] = rules
 dependencies[] = entity
-
+dependencies[] = addressfield
 
 ; commerce
 dependencies[] = commerce
