@@ -69,6 +69,7 @@ projects[commerce_australia][subdir] = "contrib"
 projects[commerce_paypal][subdir] = "contrib"
 projects[commerce_paypal][version] = "1.x-dev"
 
+; explicitly declare type = module or this kills drush make
 projects[commerce_webform][subdir] = "contrib"
 projects[commerce_webform][type] = "module"
 projects[commerce_webform][download][type] = "git"
