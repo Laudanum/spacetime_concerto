@@ -84,6 +84,6 @@ projects[commerce_webform][download][type] = "git"
 projects[commerce_webform][download][url] = "git://github.com/avr/webform_commerce.git"
 
 ; Themes
-projects[metropolis][subdir] = "sites/all/themes/contrib/metropolis"
+projects[metropolis][subdir] = "contrib"
 projects[metropolis][version] = "1.2"
 
