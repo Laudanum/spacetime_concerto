@@ -1,0 +1,48 @@
+name = Spacetime
+description = Profile for Spacetime Concerto
+core = 7.x
+version = "0.1"
+
+; INSTALL FILES
+
+files[] = "spactime.profile"
+
+dependencies[] = admin_menu
+dependencies[] = advanced_help
+dependencies[] = ctools
+dependencies[] = ckeditor
+dependencies[] = content_theme
+dependencies[] = insert
+dependencies[] = link
+dependencies[] = mailchimp
+dependencies[] = mailing_list
+dependencies[] = token
+dependencies[] = views
+
+; laudanum standard
+dependencies[] = webform
+dependencies[] = libraries
+dependencies[] = transliteration
+dependencies[] = pathauto
+dependencies[] = globalredirect
+dependencies[] = xmlsitemap
+dependencies[] = google_analytics
+dependencies[] = wysiwyg
+dependencies[] = features
+
+; developer
+dependencies[] = devel
+dependencies[] = coder
+dependencies[] = devel_themer
+dependencies[] = module_filter
+
+; social
+dependencies[] = addthis
+
+; asset handling
+; colorbox & libraries
+dependencies[] = colorbox
+
+; multifile upload
+dependencies[] = plupload
+

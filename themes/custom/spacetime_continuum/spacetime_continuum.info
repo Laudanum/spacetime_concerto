@@ -1,0 +1,21 @@
+name = Spacetime Continuum
+description = "Sub theme of Metropolis for the interim Spacetime Concerto site."
+engine = phptemplate
+stylesheets[all][] = libs/css/spacetime.css
+core = "7.x"
+base theme = metropolis
+
+regions[page_top] = Page top
+regions[superfish_menu] = Superfish menu
+regions[highlighted] = Highlighted
+regions[slideshow] = Slideshow
+regions[content_top] = Content top
+regions[sidebar_second] = Sidebar
+regions[help] = Help
+regions[content] = Main content
+regions[bottom_1] = Bottom 1
+regions[bottom_2] = Bottom 2
+regions[bottom_3] = Bottom 3
+regions[bottom_4] = Bottom 4
+regions[footer] = Footer
+regions[page_bottom] = Page bottom

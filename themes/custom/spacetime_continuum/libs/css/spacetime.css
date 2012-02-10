@@ -1,0 +1,28 @@
+.logo img {
+  height : auto;
+  max-height : 118px;
+}
+
+#header-wrapper,
+#branding-wrapper {
+  height : 118px;
+  background-color : #000000;
+}
+
+.branding {
+  margin-top : 0;
+}
+
+#branding-wrapper {
+  width : 60%;
+}
+
+.logo, .name-slogan-wrapper, .name-slogan-wrapper a {
+  color : white;
+}
+
+.name-slogan-wrapper h1 {
+  font-size : 2em;
+  width : 300px;
+  margin-top: 1em;
+}
