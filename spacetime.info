@@ -53,6 +53,10 @@ dependencies[] = colorbox
 ; multifile upload
 dependencies[] = plupload
 
+; dependencies for commerce
+dependencies[] = entity
+
+
 ; commerce
 dependencies[] = commerce
 dependencies[] = commerce_tax

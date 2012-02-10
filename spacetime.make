@@ -65,6 +65,9 @@ libraries[plupload][download][type] = "git"
 libraries[plupload][download][url] = "git://github.com/moxiecode/plupload.git"
 libraries[plupload][destination] = "libraries"   
 
+; Commerce dependencies
+projects[entity][subdir] = "contrib"
+
 ; Commerce
 projects[commerce][subdir] = "contrib"
 projects[commerce_australia][subdir] = "contrib"
