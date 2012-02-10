@@ -69,9 +69,10 @@ projects[commerce_australia][subdir] = "contrib"
 projects[commerce_paypal][subdir] = "contrib"
 projects[commerce_paypal][version] = "1.x-dev"
 
-; projects[commerce_webform][subdir] = "contrib"
-; projects[commerce_webform][download][type] = "git"
-; projects[commerce_webform][download][url] = "git://github.com/avr/webform_commerce.git"
+projects[commerce_webform][subdir] = "contrib"
+projects[commerce_webform][type] = "module"
+projects[commerce_webform][download][type] = "git"
+projects[commerce_webform][download][url] = "git://github.com/avr/webform_commerce.git"
 
 ; Themes
 projects[metropolis][subdir] = "sites/all/themes/contrib/metropolis"
