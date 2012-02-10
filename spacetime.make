@@ -67,6 +67,7 @@ libraries[plupload][destination] = "libraries"
 
 ; Commerce dependencies
 projects[entity][subdir] = "contrib"
+projects[rules][subdir] = "contrib"
 
 ; Commerce
 projects[commerce][subdir] = "contrib"

@@ -54,6 +54,7 @@ dependencies[] = colorbox
 dependencies[] = plupload
 
 ; dependencies for commerce
+dependencies[] = rules
 dependencies[] = entity
 
 
