@@ -38,6 +38,9 @@ projects[uuid][subdir] = "contrib"
 projects[node_export][subdir] = "contrib"
 
 projects[webform_alt_ui][subdir] = "contrib"
+projects[form_builder][subdir] = "contrib"
+projects[options_element][subdir] = "contrib"
+projects[ux_elements][subdir] = "contrib"
 
 ; developer
 projects[devel][subdir] = "developer"

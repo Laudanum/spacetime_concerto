@@ -19,7 +19,11 @@ dependencies[] = mailing_list
 dependencies[] = token
 dependencies[] = views
 dependencies[] = webform
+; webform alt ui and dependencies
 dependencies[] = webform_alt_ui
+dependencies[] = form_builder
+dependencies[] = options_element
+dependencies[] = ux_elements
 
 ; laudanum standard
 dependencies[] = libraries
