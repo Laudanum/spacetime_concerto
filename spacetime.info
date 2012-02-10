@@ -27,7 +27,8 @@ dependencies[] = transliteration
 dependencies[] = pathauto
 dependencies[] = globalredirect
 dependencies[] = xmlsitemap
-dependencies[] = google_analytics
+; googleanalytics module is poorly named
+dependencies[] = googleanalytics
 dependencies[] = wysiwyg
 dependencies[] = features
 

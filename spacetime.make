@@ -4,20 +4,20 @@ api = 2
 projects[drupal][version] = "7.12"
 
 ; Modules
-projects[admin_menu][destination] = "contrib"
-projects[advanced_help][destination] = "contrib"
-projects[ctools][destination] = "contrib"
-projects[ckeditor][destination] = "contrib"
-projects[content_theme][destination] = "contrib"
-projects[insert][destination] = "contrib"
-projects[link][destination] = "contrib"
-projects[mailchimp][destination] = "contrib"
-projects[mailing_list][destination] = "contrib"
-projects[token][destination] = "contrib"
-projects[views][destination] = "contrib"
+projects[admin_menu][subdir] = "contrib"
+projects[advanced_help][subdir] = "contrib"
+projects[ctools][subdir] = "contrib"
+projects[ckeditor][subdir] = "contrib"
+projects[content_theme][subdir] = "contrib"
+projects[insert][subdir] = "contrib"
+projects[link][subdir] = "contrib"
+projects[mailchimp][subdir] = "contrib"
+projects[mailing_list][subdir] = "contrib"
+projects[token][subdir] = "contrib"
+projects[views][subdir] = "contrib"
 
 ; laudanum standard
-projects[webform][destination] = "contrib"
+projects[webform][subdir] = "contrib"
 projects[libraries][subdir] = "contrib"
 projects[transliteration][subdir] = "contrib"
 projects[pathauto][subdir] = "contrib"
@@ -36,6 +36,8 @@ libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEd
 ; projects[uuid][subdir] = "contrib"
 ; projects[uuid_features][subdir] = "contrib"
 projects[node_export][subdir] = "contrib"
+
+projects[webform_alt_ui][subdir] = "contrib"
 
 ; developer
 projects[devel][subdir] = "developer"
@@ -70,8 +72,9 @@ projects[commerce_paypal][subdir] = "contrib"
 projects[commerce_paypal][version] = "1.x-dev"
 
 ; explicitly declare type = module or this kills drush make
-projects[commerce_webform][subdir] = "contrib"
 projects[commerce_webform][type] = "module"
+projects[commerce_webform][destination] = "modules/contrib"   
+projects[commerce_webform][subdir] = "contrib"
 projects[commerce_webform][download][type] = "git"
 projects[commerce_webform][download][url] = "git://github.com/avr/webform_commerce.git"
 
