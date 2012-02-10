@@ -34,7 +34,7 @@ libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEd
 
 ; features for webform
 projects[uuid][subdir] = "contrib"
-projects[uuid_featuers][subdir] = "contrib"
+projects[uuid_features][subdir] = "contrib"
 projects[node_export][subdir] = "contrib"
 
 ; developer
