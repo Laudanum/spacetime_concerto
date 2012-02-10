@@ -18,9 +18,10 @@ dependencies[] = mailchimp
 dependencies[] = mailing_list
 dependencies[] = token
 dependencies[] = views
+dependencies[] = webform
+dependencies[] = webform_alt_ui
 
 ; laudanum standard
-dependencies[] = webform
 dependencies[] = libraries
 dependencies[] = transliteration
 dependencies[] = pathauto
@@ -29,6 +30,11 @@ dependencies[] = xmlsitemap
 dependencies[] = google_analytics
 dependencies[] = wysiwyg
 dependencies[] = features
+
+; features for webform
+dependencies[] = node_export
+dependencies[] = node_export_features
+dependencies[] = spacetime_entryform
 
 ; developer
 dependencies[] = devel

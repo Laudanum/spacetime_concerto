@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Entry form feature.
+ */
+
+include_once('spacetime_entryform.features.inc');
