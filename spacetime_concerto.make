@@ -18,6 +18,9 @@ projects[views][subdir] = "contrib"
 
 ; laudanum standard
 projects[webform][subdir] = "contrib"
+; patch to fix ajax callback error Undefined function webform_expand_select_ids()
+; http://drupal.org/node/1332100
+projects[webform][patch][1132100-8] = "http://drupal.org/files/webform_include_components.patch"
 projects[libraries][subdir] = "contrib"
 projects[transliteration][subdir] = "contrib"
 projects[pathauto][subdir] = "contrib"
@@ -84,7 +87,7 @@ projects[commerce_webform][type] = "module"
 projects[commerce_webform][destination] = "modules/contrib"   
 projects[commerce_webform][subdir] = "contrib"
 projects[commerce_webform][download][type] = "git"
-projects[commerce_webform][download][url] = "git://github.com/avr/webform_commerce.git"
+projects[commerce_webform][download][url] = "git://github.com/Laudanum/webform_commerce.git"
 
 ; Themes
 projects[metropolis][subdir] = "contrib"
