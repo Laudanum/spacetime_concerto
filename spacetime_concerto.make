@@ -73,7 +73,9 @@ libraries[plupload][destination] = "libraries"
 
 ; Commerce dependencies
 projects[entity][subdir] = "contrib"
+projects[entity][version] = "1.x-dev"
 projects[rules][subdir] = "contrib"
+projects[rules][version] = "2.x-dev"
 projects[addressfield][subdir] = "contrib"
 
 ; Commerce
