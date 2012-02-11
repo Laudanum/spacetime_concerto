@@ -10,6 +10,9 @@
 
         variable_set('site_default_country', 'AU');
 
+//	our own install
+        include("spacetime.settings.inc");
+
         _spacetime_concerto_configure_currency();
         _spacetime_concerto_configure_payments();
         _spacetime_concerto_create_products();
@@ -26,7 +29,13 @@
     
     
     function _spacetime_concerto_configure_payments() {
+//  add a payment method
+
+//  add an action with our email address
+        
         if ( module_exists("commerce_paypal_wps") ) {
+//            $data = array();
+/*
             db_insert('rules_config')
                 ->fields(array(
                     'name' => 'commerce_payment_paypal_wps',
@@ -35,7 +44,22 @@
                     'active' => 1,
                     'status' => 3,
                     'module' => 'commerce_payment',
-                    'data' => $data
+  //                  'data' => $data
+                ))
+            ->execute();
+*/
+//  newer format
+            $data = array();
+            
+            db_insert('rules_config')
+                ->fields(array(
+                    'name' => 'rules_paypal_wps',
+                    'label' => 'PayPal web payments standard',
+                    'plugin' => 'reaction rule',
+                    'active' => 1,
+                    'status' => 3,
+                    'module' => 'rules',
+                    'data' => serialize($data),
                 ))
             ->execute();
         }
@@ -43,32 +67,56 @@
     
     
     function _spacetime_concerto_create_products() {
-        db_insert('commerce_product')
-            ->fields(array(
-                'sku' => 'entry-fee',
-                'type' => 'product',
-                'title' => 'Fee',
-                'language' => 'und',
-                'status' => 1,
-                'uid' => 1
-            ))
-        ->execute();
-
-        db_insert('field_data_commerce_price')
-            ->fields(array(
-                'entity_type' => 'commerce_product',
-                'bundle' => 'product',
-                'deleted' => 0,
-                'entity_id' => 2,
-                'revision_id' => 1,
-                'language' => 'und',
-                'delta' => 0,
-                'commerce_price_amount' => 25,
-                'commerce_price_currency_code' => 'AUD',
-                'commerce_price_data' => serialize(array(
-                    'components' => array(),
-                    'include_tax'=>'gst'
-                ))
-            ))
-        ->execute();        
+        $fee_price = 1095;
+        _spacetime_concerto_createProductType();
+//                   _spacetime_concerto_createProduct($sku = 'entry-fee', $title = 'Fee', $amount = 1000, $currency_code = 'AUD', $uid = 1, $type_given = 'fee') {
+        $entry_fee = _spacetime_concerto_createProduct('entry-fee', 'Fee', $fee_price, 'AUD', 1, 'fee');
     }
+    
+    
+    function _spacetime_concerto_createProduct($sku = 'entry-fee', $title = 'Fee', $amount = 1000, $currency_code = 'AUD', $uid = 1, $type_given = 'fee') {
+        if (module_exists('commerce_product')) {
+          $new_product = commerce_product_new($type_given);
+          $new_product->sku = $sku;
+          $new_product->title = $title;
+          $new_product->uid = $uid;
+
+          $new_product->commerce_price[LANGUAGE_NONE][0]['amount'] = $amount;
+          $new_product->commerce_price[LANGUAGE_NONE][0]['currency_code'] = $currency_code;
+//          $new_product->commerce_price[LANGUAGE_NONE][0]['include_tax'] = "gst";
+          $new_product->commerce_price[LANGUAGE_NONE][0]['data']['components'] = array();
+          $new_product->commerce_price[LANGUAGE_NONE][0]['data']['include_tax'] = 'gst';
+
+          commerce_product_save($new_product);
+
+          return $new_product;
+        }
+        else {
+          return FALSE;
+        }
+    }
+
+
+//  to be used to create Fee product type
+function _spacetime_concerto_createProductType($type = 'product_type', $name = 'Product Type', $description = '', $help = '', $append_random = TRUE) {
+    if (module_exists('commerce_product')) {
+
+      $new_product_type = commerce_product_ui_product_type_new();
+      $new_product_type['type'] = "fee";
+      $new_product_type['name'] = "Fee";
+      $new_product_type['description'] = "Used when creating fees rather than classic products.";
+      $new_product_type['help'] = $help;
+      $new_product_type['is_new'] = TRUE;
+
+      $save_result = commerce_product_ui_product_type_save($new_product_type);
+
+      if ($save_result === FALSE) {
+        return FALSE;
+      }
+
+      return $new_product_type;
+    }
+    else {
+      return FALSE;
+    }
+  }
