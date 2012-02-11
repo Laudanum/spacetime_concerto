@@ -37,6 +37,7 @@ libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEd
 
 ; features for webform
 projects[uuid][subdir] = "contrib"
+projects[uuid][version] = "1.x-dev"
 ; projects[uuid_features][subdir] = "contrib"
 projects[node_export][subdir] = "contrib"
 
@@ -69,7 +70,9 @@ projects[plupload][version] = "1.x-dev"
 projects[plupload][patch] = "http://drupal.org/files/issues/1240654-plupload-namespace-file-uri-to-object.patch"
 libraries[plupload][download][type] = "git"
 libraries[plupload][download][url] = "git://github.com/moxiecode/plupload.git"
-libraries[plupload][destination] = "libraries"   
+; libraries[plupload][download][type] = "get"
+; libraries[plupload][download][url] = https://github.com/downloads/moxiecode/plupload/plupload_1_5_1_1.zip
+; libraries[plupload][destination] = "libraries"   
 
 ; Commerce dependencies
 projects[entity][subdir] = "contrib"
@@ -82,7 +85,10 @@ projects[commerce_australia][subdir] = "contrib"
 projects[commerce_paypal][subdir] = "contrib"
 projects[commerce_paypal][version] = "1.x-dev"
 
-; projects[commerce_kickstart][type] = "profile"
+projects[commerce_kickstart][type] = "profile"
+projects[commerce_kickstart][download][type] = "get"
+projects[commerce_kickstart][download][url] = "http://ftp.drupal.org/files/projects/commerce_kickstart-7.x-1.3-no-core.tar.gz"
+
 
 ; explicitly declare type = module or this kills drush make
 projects[webform_commerce][type] = "module"

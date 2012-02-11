@@ -123,8 +123,8 @@ dependencies[] = commerce_tax
 dependencies[] = commerce_tax_ui
 
 dependencies[] = commerce_paypal_wps
-; dependencies[] = commerce_australia_gst
-; dependencies[] = commerce_australia_currencydisplay
+dependencies[] = commerce_australia_gst
+dependencies[] = commerce_australia_currencydisplay
 
 ; commerce webform module is poorly named
 dependencies[] = webform_commerce
