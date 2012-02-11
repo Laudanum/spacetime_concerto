@@ -1,3 +1,4 @@
+*.settings.inc
 libraries
 modules/contrib
 themes/contrib
