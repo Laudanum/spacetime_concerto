@@ -73,9 +73,7 @@ libraries[plupload][destination] = "libraries"
 
 ; Commerce dependencies
 projects[entity][subdir] = "contrib"
-projects[entity][version] = "1.x-dev"
 projects[rules][subdir] = "contrib"
-projects[rules][version] = "2.x-dev"
 projects[addressfield][subdir] = "contrib"
 
 ; Commerce
@@ -84,12 +82,14 @@ projects[commerce_australia][subdir] = "contrib"
 projects[commerce_paypal][subdir] = "contrib"
 projects[commerce_paypal][version] = "1.x-dev"
 
+; projects[commerce_kickstart][type] = "profile"
+
 ; explicitly declare type = module or this kills drush make
-projects[commerce_webform][type] = "module"
-projects[commerce_webform][destination] = "modules/contrib"   
-projects[commerce_webform][subdir] = "contrib"
-projects[commerce_webform][download][type] = "git"
-projects[commerce_webform][download][url] = "git://github.com/Laudanum/webform_commerce.git"
+projects[webform_commerce][type] = "module"
+projects[webform_commerce][destination] = "modules/contrib"   
+projects[webform_commerce][subdir] = "contrib"
+projects[webform_commerce][download][type] = "git"
+projects[webform_commerce][download][url] = "git://github.com/Laudanum/webform_commerce.git"
 
 ; Themes
 projects[metropolis][subdir] = "contrib"

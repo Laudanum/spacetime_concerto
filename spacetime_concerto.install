@@ -1,6 +1,10 @@
 <?php
 
     function spacetime_concerto_install() {
-        include_once DRUPAL_ROOT . '/profiles/standard/standard.install';
-		standard_install();    
+//        include_once DRUPAL_ROOT . '/profiles/standard/standard.install';
+//        standard_install();
+
+        include_once DRUPAL_ROOT . '/profiles/commerce_kickstart/commerce_kickstart.install';
+        include_once DRUPAL_ROOT . '/profiles/commerce_kickstart/commerce_kickstart.profile';
+        commerce_kickstart_install();
     }
