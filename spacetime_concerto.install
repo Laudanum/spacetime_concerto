@@ -1,6 +1,6 @@
 <?php
 
-    function spacetime_install() {
+    function spacetime_concerto_install() {
         include_once DRUPAL_ROOT . '/profiles/standard/standard.install';
 		standard_install();    
     }

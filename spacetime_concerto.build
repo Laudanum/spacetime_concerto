@@ -21,7 +21,7 @@ projects[drupal][patch][911354] = http://drupal.org/files/issues/911354.43.patch
 ; http://drupal.org/node/995156
 projects[drupal][patch][995156] = http://drupal.org/files/issues/995156-5_portable_taxonomy_permissions.patch
 
-projects[spacetime][type] = "profile"
-projects[spacetime][download][type] = "git"
-projects[spacetime][download][url] = "git://github.com/Laudanum/spacetime-concerto-profile.git"
-projects[spacetime][download][branch] = "master"
+projects[spacetime_concerto][type] = "profile"
+projects[spacetime_concerto][download][type] = "git"
+projects[spacetime_concerto][download][url] = "git://github.com/Laudanum/spacetime_concerto.git"
+projects[spacetime_concerto][download][branch] = "master"
