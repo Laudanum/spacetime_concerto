@@ -16,6 +16,9 @@
         _spacetime_concerto_configure_currency();
         _spacetime_concerto_configure_payments();
         _spacetime_concerto_create_products();
+//  after creating the entry fee product we can load the saved form
+        module_enable(array("spacetime_entryform"));
+        
     }
     
     
@@ -34,6 +37,7 @@
 //  add an action with our email address
         
         if ( module_exists("commerce_paypal_wps") ) {
+            
 //            $data = array();
 /*
             db_insert('rules_config')
@@ -48,23 +52,42 @@
                 ))
             ->execute();
 */
-//  newer format
-            $data = array();
-            
-            db_insert('rules_config')
-                ->fields(array(
-                    'name' => 'rules_paypal_wps',
-                    'label' => 'PayPal web payments standard',
-                    'plugin' => 'reaction rule',
-                    'active' => 1,
-                    'status' => 3,
-                    'module' => 'rules',
-                    'data' => serialize($data),
-                ))
-            ->execute();
         }
     }
     
+    /*
+function spacetime_concerto_default_rules_configuration() {
+  $items = array();
+  if ( module_exists("commerce_paypal_wps") && PP_ID ) {
+      $items['rules_paypal_standard'] = entity_import('rules_config', '{ "rules_paypal_standard" : {
+          "LABEL" : "Paypal Standard",
+          "PLUGIN" : "reaction rule",
+          "REQUIRES" : [ "commerce_payment" ],
+          "ON" : [ "commerce_payment_methods" ],
+          "DO" : [
+            { "commerce_payment_enable_paypal_wps" : {
+                "commerce_order" : [ "commerce_order" ],
+                "payment_method" : { "value" : {
+                    "method_id" : "paypal_wps",
+                    "settings" : {
+                      "business" : ' . PP_ID . ',
+                      "currency_code" : "AUD",
+                      "language" : "AU",
+                      "server" : "sandbox",
+                      "payment_action" : "sale",
+                      "ipn_logging" : "notification"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }');
+  }
+  return $items;
+}
+*/
     
     function _spacetime_concerto_create_products() {
         $fee_price = 1095;

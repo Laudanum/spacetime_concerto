@@ -125,6 +125,8 @@ dependencies[] = commerce_tax_ui
 dependencies[] = commerce_paypal_wps
 dependencies[] = commerce_australia_gst
 dependencies[] = commerce_australia_currencydisplay
+; paypal settings - requires the .settings.inc 
+dependencies[] = spacetime_concerto_commerce_payment_rules
 
 ; commerce webform module is poorly named
 dependencies[] = webform_commerce
