@@ -1,0 +1,10 @@
+<?php
+/**
+ * @file
+ * spacetime_concerto_commerce_payment_rules.rules_defaults.inc
+ */
+
+/**
+ * Implements hook_default_rules_configuration().
+ */
+}
