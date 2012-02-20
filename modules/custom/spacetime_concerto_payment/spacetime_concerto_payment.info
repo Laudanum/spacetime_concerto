@@ -1,0 +1,8 @@
+name = "Payment extras for Spacetime Concerto"
+description = ""
+core = "7.x"
+package = "Spacetime Concerto"
+version = "7.x-0.1"
+project = "spacetime_concerto_payment"
+dependencies[] = "spacetime_entryform"
+dependencies[] = "spacetime_concerto_my_entries"

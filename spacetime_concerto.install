@@ -4,20 +4,22 @@
 //        include_once DRUPAL_ROOT . '/profiles/standard/standard.install';
 //        standard_install();
 
-        include_once DRUPAL_ROOT . '/profiles/commerce_kickstart/commerce_kickstart.install';
-        include_once DRUPAL_ROOT . '/profiles/commerce_kickstart/commerce_kickstart.profile';
-        commerce_kickstart_install();
+//        include_once DRUPAL_ROOT . '/profiles/commerce_kickstart/commerce_kickstart.install';
+//        include_once DRUPAL_ROOT . '/profiles/commerce_kickstart/commerce_kickstart.profile';
+//        commerce_kickstart_install();
 
-        variable_set('site_default_country', 'AU');
+//        variable_set('site_default_country', 'AU');
 
 //	our own install
         include("spacetime.settings.inc");
 
-        _spacetime_concerto_configure_currency();
-        _spacetime_concerto_configure_payments();
-        _spacetime_concerto_create_products();
-//  after creating the entry fee product we can load the saved form
-        module_enable(array("spacetime_entryform"));
+//        _spacetime_concerto_configure_currency();
+//        _spacetime_concerto_configure_payments();
+//        _spacetime_concerto_create_products();
+
+//  after creating the entry fee product we can load the saved form 
+//  only if we're using commerce
+//        module_enable(array("spacetime_entryform"));
         
     }
     

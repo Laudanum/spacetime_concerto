@@ -75,27 +75,27 @@ libraries[plupload][download][url] = "git://github.com/moxiecode/plupload.git"
 ; libraries[plupload][destination] = "libraries"   
 
 ; Commerce dependencies
-projects[entity][subdir] = "contrib"
-projects[rules][subdir] = "contrib"
-projects[addressfield][subdir] = "contrib"
-
-; Commerce
-projects[commerce][subdir] = "contrib"
-projects[commerce_australia][subdir] = "contrib"
-projects[commerce_paypal][subdir] = "contrib"
-projects[commerce_paypal][version] = "1.x-dev"
-
-projects[commerce_kickstart][type] = "profile"
-projects[commerce_kickstart][download][type] = "get"
-projects[commerce_kickstart][download][url] = "http://ftp.drupal.org/files/projects/commerce_kickstart-7.x-1.3-no-core.tar.gz"
-
-
-; explicitly declare type = module or this kills drush make
-projects[webform_commerce][type] = "module"
-projects[webform_commerce][destination] = "modules/contrib"   
-projects[webform_commerce][subdir] = "contrib"
-projects[webform_commerce][download][type] = "git"
-projects[webform_commerce][download][url] = "git://github.com/Laudanum/webform_commerce.git"
+; projects[entity][subdir] = "contrib"
+; projects[rules][subdir] = "contrib"
+; projects[addressfield][subdir] = "contrib"
+; 
+; ; Commerce
+; projects[commerce][subdir] = "contrib"
+; projects[commerce_australia][subdir] = "contrib"
+; projects[commerce_paypal][subdir] = "contrib"
+; projects[commerce_paypal][version] = "1.x-dev"
+; 
+; projects[commerce_kickstart][type] = "profile"
+; projects[commerce_kickstart][download][type] = "get"
+; projects[commerce_kickstart][download][url] = "http://ftp.drupal.org/files/projects/commerce_kickstart-7.x-1.3-no-core.tar.gz"
+; 
+; 
+; ; explicitly declare type = module or this kills drush make
+; projects[webform_commerce][type] = "module"
+; projects[webform_commerce][destination] = "modules/contrib"   
+; projects[webform_commerce][subdir] = "contrib"
+; projects[webform_commerce][download][type] = "git"
+; projects[webform_commerce][download][url] = "git://github.com/Laudanum/webform_commerce.git"
 
 ; Themes
 projects[metropolis][subdir] = "contrib"
