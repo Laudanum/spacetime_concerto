@@ -141,6 +141,12 @@ function spacetime_concerto_my_entries_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'user/%/entries';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'My entries';
+  $handler->display->display_options['menu']['description'] = 'A list of all entries submitted.';
+  $handler->display->display_options['menu']['weight'] = '-20';
+  $handler->display->display_options['menu']['name'] = 'user-menu';
+  $handler->display->display_options['menu']['context'] = 0;
   $export['my_entries'] = $view;
 
   return $export;
