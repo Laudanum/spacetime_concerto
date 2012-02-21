@@ -76,7 +76,7 @@ libraries[plupload][download][url] = "git://github.com/moxiecode/plupload.git"
 
 ; Commerce dependencies
 ; projects[entity][subdir] = "contrib"
-; projects[rules][subdir] = "contrib"
+projects[rules][subdir] = "contrib"
 ; projects[addressfield][subdir] = "contrib"
 ; 
 ; ; Commerce
