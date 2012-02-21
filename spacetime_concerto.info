@@ -18,7 +18,7 @@ dependencies[] = block
 ; dependencies[] = blog
 ; dependencies[] = book
 ; dependencies[] = color
-; dependencies[] = comment
+dependencies[] = comment
 dependencies[] = contact
 dependencies[] = contextual
 dependencies[] = dashboard
@@ -92,7 +92,7 @@ dependencies[] = plupload
 ; dependencies for commerce
 ; dependencies[] = addressfield
 dependencies[] = ctools
-; dependencies[] = entity
+dependencies[] = entity
 ; dependencies[] = entity_token
 dependencies[] = rules
 dependencies[] = rules_admin
