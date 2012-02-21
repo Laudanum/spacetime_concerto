@@ -1,1 +1,81 @@
 <?php
+/*
+  Create templates for views created by my_entries module.
+  views-view-fields--my-entries.tpl.php
+*/
+
+/**
+ * Implements hook_theme().
+ */
+function spacetime_concerto_payment_theme() {
+  return array(
+    'views_view_fields__my_entries' => array(
+      'variables' => array('view' => NULL, 'options' => NULL, 'row' => NULL),
+      'template' => 'views-view-fields--my-entries',
+      'base hook' => 'views_view_fields',
+      'path' => drupal_get_path('module', 'spacetime_concerto_payment'),
+    ),
+  );
+}
+
+
+/* Implementation of hook_views_view_fields.
+  (a preprocessor for views)
+  Load the submission and extract certain details.
+  */
+function spacetime_concerto_payment_preprocess_views_view_fields(&$vars) {
+  $vars['sid'] = $vars['fields']['sid']->raw;
+
+//  modules/contrib/webform/includes/webform.submissions.inc:773:    $new_submissions = webform_get_submissions(array('sid' => $sid));
+  module_load_include('inc', 'webform', 'includes/webform.submissions');
+  $submission = webform_get_submissions(array('sid' => $vars['sid']));
+  if ( ! count($submission) ) 
+    return;
+//  we're only returning one submission so get that one
+  $submission = array_pop($submission);
+  $nid = $submission->nid;
+  $node = node_load($nid);
+//  a list of components ordered by parent we're interested in.
+  $components = array(
+    0 => array(
+      'entry_contact_name_to_contact_about_this_application', 
+      'name_of_concerto', 
+      'mobile_phone', 
+      'contact_number'
+    ),
+    'admin_use' => array(
+      'payment_complete', 
+      'payment_date', 
+      'payment_receipt_number', 
+    )
+  );
+  foreach ( $components as $key=>$children ) {
+//  the parent component if there is one
+    if ( is_int($key) )
+      $pid = $key;
+    else
+      $pid = webform_get_cid($node, $key, 0);
+
+//  iterate over the components and create variables for the ones that exist.
+    foreach ( $children as $c_name ) {
+      $vars[$c_name] = "";
+      $cid = webform_get_cid($node, $c_name, $pid);
+      if ( ! $cid || ! array_key_exists($cid, $submission->data) )
+        continue;
+
+      if ( isset($submission->data[$cid]['value'][0]) ) {
+        $vars[$c_name] = $submission->data[$cid]['value'][0];
+      }
+    }
+  }
+  
+//  handle all the fields we need
+    $vars['submitted'] = date("j M Y", $vars['fields']['submitted']->raw);
+    $vars['title'] = $vars['name_of_concerto'] ? $vars['name_of_concerto'] : "[untitled]";
+    $vars['view_submission'] = $vars['fields']['view_submission']->content;
+    
+    $vars['payment_date'] = strtotime ($vars['payment_date']);
+    $vars['payment_date'] = date("j M Y", $vars['payment_date']);
+    
+    $vars['status'] = $vars['payment_complete'] ? "PAID " . $vars['payment_date'] : null;
+}

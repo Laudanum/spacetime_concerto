@@ -5,25 +5,3 @@
  */
 
 include_once('spacetime_concerto_my_entries.features.inc');
-
-/** 
-* Implementation of hook_menu(). 
-*/ 
-function spacetime_concerto_my_entries_menu() {
-//  print "<h1>spacetime_entryform_menu</h1>";
-//	$items = array(); 
-	$items['user/%user/entries'] = array( 
-      'title' => t('My entries'), 
-      'weight' => 20,
-      'description' => t('All my entries.'), 
-      'page callback' => 'drupal_get_form', 
-      'access callback' => 'custom_tab_access',
-      'type' => MENU_LOCAL_TASK,
-      'page arguments' => array('spacetime_concerto_my_entries_views_default_views', 1), 
-      'file' => 'spacetime_concerto_my_entries.views_default.inc',
-      'file path' => drupal_get_path('module', 'spacetime_concerto_my_entries'),
-    ); 
-//	print_r($items);
-  
-	return $items;
-} 
