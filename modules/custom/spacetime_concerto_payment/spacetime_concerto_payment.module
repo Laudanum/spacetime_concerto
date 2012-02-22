@@ -9,24 +9,41 @@
  * Override path to `previous entries` with one to our own view. node/1/submissions
  * Override path to `confirmation` page. node/1/done?sid=4
  */
-function spacetime_concerto_payment_menu() {
-  global $user;
-  
+function spacetime_concerto_payment_menu() {  
   $entry_form_nid = 1;
-  $uid = $user->uid;
   $items['node/' . $entry_form_nid . '/submissions'] = array(
-    'page callback' => 'drupal_goto',
-    'page arguments' => array('user/' . $uid . '/entries'),
+//    'page callback' => 'drupal_goto',
+    'page callback' => 'spacetime_concerto_payment_my_entries',
+//    'page arguments' => array('user/%spacetime_concerto_payment_user_uid/entries'),
     'access arguments' => array('access content'),
     'type' => MENU_NORMAL_ITEM,
   );
   $items['node/' . $entry_form_nid . '/done'] = array(
-    'page callback' => 'drupal_goto',
-    'page arguments' => array('user/' . $uid . '/entries'),
+//    'page callback' => 'drupal_goto',
+    'page callback' => 'spacetime_concerto_payment_my_entries',
+//    'page arguments' => array('user/%spacetime_concerto_payment_user_uid/entries'),
+//    'page arguments' => array('_spacetime_concerto_payment_my_entries_path', array()),
     'access arguments' => array('access content'),
     'type' => MENU_NORMAL_ITEM,
   );
   return $items;
+}
+
+/*
+  Callback for hook_menu - redirect to user/[uid]/entries ( defined by view).
+*/
+function spacetime_concerto_payment_my_entries($args=array()) {
+  drupal_goto(_spacetime_concerto_payment_my_entries_path());
+}
+
+
+/*
+  Construct the path to the my entries page.
+*/  
+function _spacetime_concerto_payment_my_entries_path($edit, $arg = NULL) {
+  global $user;
+  $uid = $user->uid ? $user->uid : 0;
+  return 'user/' . $uid . '/entries';
 }
 
 
