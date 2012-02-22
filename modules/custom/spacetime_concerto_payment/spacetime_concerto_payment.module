@@ -6,10 +6,18 @@
 
 /**
  * Implements hook_menu().
- * Override path to `previous entries` with one to our own view.
+ * Override path to `previous entries` with one to our own view. node/1/submissions
+ * Override path to `confirmation` page. node/1/done?sid=4
  */
 function spacetime_concerto_payment_menu() {
-  $items['node/1/submissions'] = array(
+  $entry_form_nid = 1;
+  $items['node/' . $entry_form_nid . '/submissions'] = array(
+    'page callback' => 'drupal_goto',
+    'page arguments' => array('user/1/entries'),
+    'access arguments' => array('access content'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  $items['node/' . $entry_form_nid . '/done'] = array(
     'page callback' => 'drupal_goto',
     'page arguments' => array('user/1/entries'),
     'access arguments' => array('access content'),
