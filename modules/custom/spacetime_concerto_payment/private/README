@@ -1,0 +1,21 @@
+
+https://cms.paypal.com/au/cgi-bin/?cmd=_render-content&content_ID=developer/e_howto_html_encryptedwebpayments#id08A3I0P017Q
+
+##Create a certificate##
+1. Create a private key
+`$ openssl genrsa -out private/spacetime-prvkey.pem 1024`
+1. Generate a public certificate
+`$ openssl req -new -key private/spacetime-prvkey.pem  -x509 -days 365 -out private/spacetime-pubcert.pem`
+1. Upload to Paypal (business/premiere)
+Profile > Selling preferences > Encrypted Payment Settings
+https://www.sandbox.paypal.com/au/cgi-bin/webscr?cmd=_profile-website-cert
+ Your Public Certificates > Add certificate
+1. Store the certificate ID 
+
+
+##Download Paypal certificate##
+1. Profile > Seller Preferences > Encrypted Payment Settings link
+1. PayPal Public Certificate
+
+##Test accounts##
+cnk_1299549188_biz@houseoflaudanum.com (business)

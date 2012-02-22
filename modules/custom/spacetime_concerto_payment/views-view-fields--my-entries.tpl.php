@@ -41,32 +41,8 @@
 <?php else: 
   $fee = "35.00";
 ?>
-<div class="cost">$AUD <?php echo $fee; ?></div>
-
-<form name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal">
-<input type="hidden" name="cmd" value="_cart">
-<input type="hidden" name="business" value="paypal@houseoflaudanum.com">
-<input type="hidden" name="currency_code" value="AUD">
-<input type="hidden" name="item_name" value="Entry fee #<?php echo $fields['sid']->raw; ?> @<?php echo $fields['name']->raw; ?>">
-<input type="hidden" name="amount" value="<?php echo $fee; ?>">
-<input type="hidden" name="add" value="1">
-
-<!--
-<INPUT TYPE="hidden" NAME="first_name" VALUE="John">
-<INPUT TYPE="hidden" NAME="last_name" VALUE="Doe">
-<INPUT TYPE="hidden" NAME="address1" VALUE="9 Elm Street">
-<INPUT TYPE="hidden" NAME="address2" VALUE="Apt 5">
-<INPUT TYPE="hidden" NAME="city" VALUE="Berwyn">
-<INPUT TYPE="hidden" NAME="state" VALUE="PA">
-<INPUT TYPE="hidden" NAME="zip" VALUE="19312">
-<INPUT TYPE="hidden" NAME="lc" VALUE="US">
--->
-
-<INPUT TYPE="hidden" NAME="email" VALUE="<?php echo $fields['mail']->raw; ?>">
-
-<input type="image" src="http://www.paypalobjects.com/en_US/i/btn/x-click-but22.gif" border="0" name="submit" width="87" height="23" alt="Make payments with PayPal - it's fast, free and secure!">
-</form>
-
+  <span class="fee">AUD $<?php echo $fee; ?></span>
+  <?php echo $payment; ?>
 
 <?php endif; ?>
     <?php echo $draft; ?>

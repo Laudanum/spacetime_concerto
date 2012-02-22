@@ -83,6 +83,8 @@ function spacetime_concerto_payment_preprocess_views_view(&$vars) {
   */
 function spacetime_concerto_payment_preprocess_views_view_fields(&$vars) {
 //  kpr($vars);
+  global $user;
+
   if ( $vars['view']->name == 'my_entries') {
     $vars['sid'] = $vars['fields']['sid']->raw;
 
@@ -144,5 +146,56 @@ function spacetime_concerto_payment_preprocess_views_view_fields(&$vars) {
       $vars['payment_date'] = date("j M Y", $vars['payment_date']);
     
       $vars['status'] = $vars['payment_complete'] ? t("Paid") . " " . $vars['payment_date'] : null;
+      if ( ! $vars['payment_complete'] ) {
+        $vars['payment'] = _spacetime_concerto_payment_paypal_button("Entry fee #" . $vars['sid'] . " @" . $user->name, "35.00");
+      }
     }
+}
+
+
+function _spacetime_concerto_payment_paypal_button($item_name = 'Entry fee', $amount = '35.00') {
+  global $user;
+  $uid = $user->uid;
+  
+  $sandbox = TRUE;
+  if ( $sandbox ) {
+	  $destinationUrl_ = 'https://www.sandbox.paypal.com/cgi-bin/webscr';
+	  $business = 'cnk_1299549188_biz@houseoflaudanum.com';
+  } else {
+	  $destinationUrl_ = 'https://www.paypal.com/cgi-bin/webscr';    
+	  $business = 'tredhead@newcastle.edu.au';
+  }
+  
+  $module_path = drupal_get_path('module', 'spacetime_concerto_payment');
+  require_once($module_path . "/paypal_php_wps_toolkit/lib/EWPServices.php");
+	
+	$service = new EWPServices();
+	$buttonParams_ = array(
+	 'cmd' => '_cart',
+	 'business' => $business,
+	 'currency_code' => 'AUD',
+	 'item_name' => $item_name,
+	 'amount' => $amount,
+	 'add' => 1,
+//	 'email' => $user->email,
+	);
+	$ewpCertPath_ = $module_path . '/private/spacetime-pubcert.pem';
+	$ewpPrivateKeyPath_ = $module_path . '/private/spacetime-prvkey.pem';
+	$ewpPrivateKeyPwd_ = '';
+	$paypalCertPath_ = $module_path . '/private/paypal_cert_pem';
+	$destinationUrl_ = $destinationUrl_;
+	$buttonImageUrl_ = 'http://www.paypalobjects.com/en_US/i/btn/x-click-but22.gif';
+	
+	$payment = $service->encryptButton($buttonParams_,
+							$ewpCertPath_,
+							$ewpPrivateKeyPath_,
+							$ewpPrivateKeyPwd_,
+							$paypalCertPath_,
+							$destinationUrl_,
+							$buttonImageUrl_);
+
+	if ( $payment['status'] )
+	  return $payment['encryptedButton'];
+	else
+	  return FALSE;
 }
