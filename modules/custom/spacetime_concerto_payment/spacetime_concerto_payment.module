@@ -15,12 +15,25 @@ function spacetime_concerto_payment_theme() {
       'base hook' => 'views_view_fields',
       'path' => drupal_get_path('module', 'spacetime_concerto_payment'),
     ),
+    'views_view__my_entries' => array(
+      'variables' => array('view' => NULL, 'options' => NULL, 'row' => NULL),
+      'template' => 'views-view--my-entries',
+      'base hook' => 'views_view',
+      'path' => drupal_get_path('module', 'spacetime_concerto_payment'),
+    ),    
   );
 }
 
-
 /* Implementation of hook_views_view_fields.
-  (a preprocessor for views)
+  Add a link to quickly add a new entry.
+  */
+function spacetime_concerto_payment_preprocess_views_view(&$vars) {
+  if ( $vars['name'] == 'my_entries') {
+    $vars['header'] .= l("Add new entry", "content/entry-form", array('attributes' => array('class' => 'add-link')));
+  }
+}
+
+/* Implementation of hook_views_view_fields_preprocessor
   Load the submission and extract certain details.
   */
 function spacetime_concerto_payment_preprocess_views_view_fields(&$vars) {
@@ -68,11 +81,15 @@ function spacetime_concerto_payment_preprocess_views_view_fields(&$vars) {
       }
     }
   }
-  
+//    kpr($vars);
 //  handle all the fields we need
     $vars['submitted'] = date("j M Y", $vars['fields']['submitted']->raw);
     $vars['title'] = $vars['name_of_concerto'] ? $vars['name_of_concerto'] : "[untitled]";
+//  view edit links
     $vars['view_submission'] = $vars['fields']['view_submission']->content;
+    $vars['edit_submission'] = l("edit", "node/" . $nid . "/submission/" . $vars['sid'] . "/edit");
+
+    $vars['draft'] = $vars['fields']['is_draft']->raw ? "This is a draft entry. " . l("Please don't forget to submit it.", "node/" . $nid . "/submission/" . $vars['sid'] . "/edit") : "";
     
     $vars['payment_date'] = strtotime ($vars['payment_date']);
     $vars['payment_date'] = date("j M Y", $vars['payment_date']);

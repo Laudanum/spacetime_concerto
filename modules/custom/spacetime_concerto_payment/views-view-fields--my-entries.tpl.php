@@ -29,10 +29,10 @@
 */
 ?>
 <!-- template views view fields my entries -->
-
-  <div>#<?php echo $sid; ?> / <?php echo $submitted; ?></div>
-  <div><?php echo $title; ?></div>
-  <div>
+<tr>
+  <td>#<?php echo $sid; ?> / <?php echo $submitted; ?></td>
+  <td><?php echo $title; ?></td>
+  <td>
 <?php
   if ( $payment_complete ):
 ?>
@@ -64,5 +64,7 @@
 </form>
 
 <?php endif; ?>
-  </div>
-  <div><?php echo $view_submission; ?></div>
+    <?php echo $draft; ?>
+  </td>
+  <td><?php echo $view_submission; ?> | <?php echo $edit_submission; ?></td>
+</tr>
