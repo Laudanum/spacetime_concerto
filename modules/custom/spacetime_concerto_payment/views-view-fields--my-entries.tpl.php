@@ -30,13 +30,14 @@
 ?>
 <!-- template views view fields my entries -->
 <tr>
-  <td>#<?php echo $sid; ?> / <?php echo $submitted; ?></td>
+  <td>#<?php echo $sid; ?></td>
+  <td><?php echo $submitted; ?></td>
   <td><?php echo $title; ?></td>
   <td>
 <?php
   if ( $payment_complete ):
 ?>
-  PAID <?php echo $payment_date; ?><br />
+  Paid <?php echo $payment_date; ?><br />
 <?php else: ?>
 
 <form name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal">

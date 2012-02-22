@@ -5,6 +5,21 @@
 */
 
 /**
+ * Implements hook_menu().
+ * Override path to `previous entries` with one to our own view.
+ */
+function spacetime_concerto_payment_menu() {
+  $items['node/1/submissions'] = array(
+    'page callback' => 'drupal_goto',
+    'page arguments' => array('user/1/entries'),
+    'access arguments' => array('access content'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+
+
+/**
  * Implements hook_theme().
  */
 function spacetime_concerto_payment_theme() {
@@ -24,6 +39,7 @@ function spacetime_concerto_payment_theme() {
   );
 }
 
+
 /* Implementation of hook_views_view_fields.
   Add a link to quickly add a new entry.
   */
@@ -32,6 +48,7 @@ function spacetime_concerto_payment_preprocess_views_view(&$vars) {
     $vars['header'] .= l("Add new entry", "content/entry-form", array('attributes' => array('class' => 'add-link')));
   }
 }
+
 
 /* Implementation of hook_views_view_fields_preprocessor
   Load the submission and extract certain details.
@@ -81,10 +98,11 @@ function spacetime_concerto_payment_preprocess_views_view_fields(&$vars) {
       }
     }
   }
-//    kpr($vars);
 //  handle all the fields we need
     $vars['submitted'] = date("j M Y", $vars['fields']['submitted']->raw);
     $vars['title'] = $vars['name_of_concerto'] ? $vars['name_of_concerto'] : "[untitled]";
+    $vars['title'] = l($vars['title'], "node/" . $nid . "/submission/" . $vars['sid']);
+
 //  view edit links
     $vars['view_submission'] = $vars['fields']['view_submission']->content;
     $vars['edit_submission'] = l("edit", "node/" . $nid . "/submission/" . $vars['sid'] . "/edit");
@@ -94,5 +112,5 @@ function spacetime_concerto_payment_preprocess_views_view_fields(&$vars) {
     $vars['payment_date'] = strtotime ($vars['payment_date']);
     $vars['payment_date'] = date("j M Y", $vars['payment_date']);
     
-    $vars['status'] = $vars['payment_complete'] ? "PAID " . $vars['payment_date'] : null;
+    $vars['status'] = $vars['payment_complete'] ? t("Paid") . " " . $vars['payment_date'] : null;
 }
