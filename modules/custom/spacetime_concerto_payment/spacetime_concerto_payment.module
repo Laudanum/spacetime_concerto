@@ -10,16 +10,19 @@
  * Override path to `confirmation` page. node/1/done?sid=4
  */
 function spacetime_concerto_payment_menu() {
+  global $user;
+  
   $entry_form_nid = 1;
+  $uid = $user->uid;
   $items['node/' . $entry_form_nid . '/submissions'] = array(
     'page callback' => 'drupal_goto',
-    'page arguments' => array('user/1/entries'),
+    'page arguments' => array('user/' . $uid . '/entries'),
     'access arguments' => array('access content'),
     'type' => MENU_NORMAL_ITEM,
   );
   $items['node/' . $entry_form_nid . '/done'] = array(
     'page callback' => 'drupal_goto',
-    'page arguments' => array('user/1/entries'),
+    'page arguments' => array('user/' . $uid . '/entries'),
     'access arguments' => array('access content'),
     'type' => MENU_NORMAL_ITEM,
   );
@@ -62,63 +65,67 @@ function spacetime_concerto_payment_preprocess_views_view(&$vars) {
   Load the submission and extract certain details.
   */
 function spacetime_concerto_payment_preprocess_views_view_fields(&$vars) {
-  $vars['sid'] = $vars['fields']['sid']->raw;
+//  kpr($vars);
+  if ( $vars['view']->name == 'my_entries') {
+    $vars['sid'] = $vars['fields']['sid']->raw;
 
-//  modules/contrib/webform/includes/webform.submissions.inc:773:    $new_submissions = webform_get_submissions(array('sid' => $sid));
-  module_load_include('inc', 'webform', 'includes/webform.submissions');
-  $submission = webform_get_submissions(array('sid' => $vars['sid']));
-  if ( ! count($submission) ) 
-    return;
-//  we're only returning one submission so get that one
-  $submission = array_pop($submission);
-  $nid = $submission->nid;
-  $node = node_load($nid);
-//  a list of components ordered by parent we're interested in.
-  $components = array(
-    0 => array(
-      'entry_contact_name_to_contact_about_this_application', 
-      'name_of_concerto', 
-      'mobile_phone', 
-      'contact_number'
-    ),
-    'admin_use' => array(
-      'payment_complete', 
-      'payment_date', 
-      'payment_receipt_number', 
-    )
-  );
-  foreach ( $components as $key=>$children ) {
-//  the parent component if there is one
-    if ( is_int($key) )
-      $pid = $key;
-    else
-      $pid = webform_get_cid($node, $key, 0);
+  //  modules/contrib/webform/includes/webform.submissions.inc:773:    $new_submissions = webform_get_submissions(array('sid' => $sid));
+    module_load_include('inc', 'webform', 'includes/webform.submissions');
+    $submission = webform_get_submissions(array('sid' => $vars['sid']));
+    if ( ! count($submission) ) 
+      return;
+  //  we're only returning one submission so get that one
+    $submission = array_pop($submission);
+    $nid = $submission->nid;
+    $node = node_load($nid);
+  //  a list of components ordered by parent we're interested in.
+    $components = array(
+      0 => array(
+        'entry_contact_name_to_contact_about_this_application', 
+        'name_of_concerto', 
+        'mobile_phone', 
+        'contact_number'
+      ),
+      'admin_use' => array(
+        'payment_complete', 
+        'payment_date', 
+        'payment_receipt_number', 
+      )
+    );
+    foreach ( $components as $key=>$children ) {
+  //  the parent component if there is one
+      if ( is_int($key) )
+        $pid = $key;
+      else
+        $pid = webform_get_cid($node, $key, 0);
 
-//  iterate over the components and create variables for the ones that exist.
-    foreach ( $children as $c_name ) {
-      $vars[$c_name] = "";
-      $cid = webform_get_cid($node, $c_name, $pid);
-      if ( ! $cid || ! array_key_exists($cid, $submission->data) )
-        continue;
+  //  iterate over the components and create variables for the ones that exist.
+      foreach ( $children as $c_name ) {
+        $vars[$c_name] = "";
+        $cid = webform_get_cid($node, $c_name, $pid);
+        if ( ! $cid || ! array_key_exists($cid, $submission->data) )
+          continue;
 
-      if ( isset($submission->data[$cid]['value'][0]) ) {
-        $vars[$c_name] = $submission->data[$cid]['value'][0];
+        if ( isset($submission->data[$cid]['value'][0]) ) {
+          $vars[$c_name] = $submission->data[$cid]['value'][0];
+        }
       }
     }
-  }
-//  handle all the fields we need
-    $vars['submitted'] = date("j M Y", $vars['fields']['submitted']->raw);
-    $vars['title'] = $vars['name_of_concerto'] ? $vars['name_of_concerto'] : "[untitled]";
-    $vars['title'] = l($vars['title'], "node/" . $nid . "/submission/" . $vars['sid']);
+  //  handle all the fields we need
+      $vars['submitted'] = date("j M Y", $vars['fields']['submitted']->raw);
+      $vars['title'] = $vars['name_of_concerto'] ? $vars['name_of_concerto'] : "[untitled]";
+      $vars['title'] = l($vars['title'], "node/" . $nid . "/submission/" . $vars['sid']);
 
-//  view edit links
-    $vars['view_submission'] = $vars['fields']['view_submission']->content;
-    $vars['edit_submission'] = l("edit", "node/" . $nid . "/submission/" . $vars['sid'] . "/edit");
+  //  view edit links
+      $vars['view_submission'] = $vars['fields']['view_submission']->content;
+      $vars['edit_submission'] = $vars['fields']['edit_submission']->content;
+//      $vars['edit_submission'] = l("edit", "node/" . $nid . "/submission/" . $vars['sid'] . "/edit");
 
-    $vars['draft'] = $vars['fields']['is_draft']->raw ? "This is a draft entry. " . l("Please don't forget to submit it.", "node/" . $nid . "/submission/" . $vars['sid'] . "/edit") : "";
+      $vars['draft'] = $vars['fields']['is_draft']->raw ? "This is a draft entry. " . l("Please don't forget to submit it.", "node/" . $nid . "/submission/" . $vars['sid'] . "/edit") : "";
     
-    $vars['payment_date'] = strtotime ($vars['payment_date']);
-    $vars['payment_date'] = date("j M Y", $vars['payment_date']);
+      $vars['payment_date'] = strtotime ($vars['payment_date']);
+      $vars['payment_date'] = date("j M Y", $vars['payment_date']);
     
-    $vars['status'] = $vars['payment_complete'] ? t("Paid") . " " . $vars['payment_date'] : null;
+      $vars['status'] = $vars['payment_complete'] ? t("Paid") . " " . $vars['payment_date'] : null;
+    }
 }
