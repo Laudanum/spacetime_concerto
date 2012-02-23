@@ -56,6 +56,14 @@ dependencies[] = link
 ; dependencies[] = mailing_list
 dependencies[] = token
 dependencies[] = webform
+
+; mailing list integration
+dependencies[] = campaignmonitor
+dependencies[] = campaignmonitor_registration
+dependencies[] = campaignmonitor_user
+dependencies[] = profile2
+dependencies[] = entity_token
+
 ; webform alt ui and dependencies
 ; dependencies[] = webform_alt_ui
 ; dependencies[] = form_builder

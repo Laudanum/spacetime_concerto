@@ -1,5 +1,5 @@
 *.settings.inc
-private/*.pem
+*.pem
 libraries
 modules/contrib
 themes/contrib
