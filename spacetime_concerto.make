@@ -5,6 +5,7 @@ projects[drupal][version] = "7.12"
 
 ; Modules
 projects[admin_menu][subdir] = "contrib"
+projects[admin_menu][patch][1030856-13] = "http://drupal.org/files/admin_menu-invalid-arg-admin_menu_merge_tree-1030856-13.patch"
 projects[advanced_help][subdir] = "contrib"
 projects[ctools][subdir] = "contrib"
 projects[ckeditor][subdir] = "contrib"
