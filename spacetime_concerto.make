@@ -36,6 +36,7 @@ projects[wysiwyg][subdir] = "contrib"
 projects[features][subdir] = "contrib"
 ; patch features to handle shortcut sets http://drupal.org/node/986968
 ; projects[features][patch][986968] = http://drupal.org/files/issues/features.shortcut_sets_0.patch
+projects[strongarm][subdir] = "contrib"
 
 libraries[ckeditor][download][type] = "get"
 libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.4.2/ckeditor_3.4.2.tar.gz"
@@ -57,6 +58,9 @@ projects[ux_elements][subdir] = "contrib"
 ; projects[profile2][subdir] = "contrib"
 projects[campaignmonitor][subdir] = "contrib"
 projects[profile2][subdir] = contrib
+libraries[campaignmonitor][download][type] = "git"
+libraries[campaignmonitor][download][url] = "https://github.com/campaignmonitor/createsend-php.git"
+libraries[campaignmonitor][download][branch] = 1.0.11
 
 ; developer
 projects[devel][subdir] = "developer"
