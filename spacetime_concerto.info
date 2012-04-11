@@ -56,6 +56,8 @@ dependencies[] = link
 ; dependencies[] = mailing_list
 dependencies[] = token
 dependencies[] = webform
+dependencies[] = webform_validation
+
 ; webform alt ui and dependencies
 ; dependencies[] = webform_alt_ui
 ; dependencies[] = form_builder

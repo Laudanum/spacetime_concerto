@@ -18,6 +18,7 @@ projects[views][subdir] = "contrib"
 
 ; laudanum standard
 projects[webform][subdir] = "contrib"
+projects[webform_validation][subdir] = "contrib"
 ; patch to fix ajax callback error Undefined function webform_expand_select_ids()
 ; http://drupal.org/node/1332100
 projects[webform][patch][1132100-8] = "http://drupal.org/files/webform_include_components.patch"
@@ -100,4 +101,18 @@ projects[rules][subdir] = "contrib"
 ; Themes
 projects[metropolis][subdir] = "contrib"
 projects[metropolis][version] = "1.2"
+
+; projects[twitter_bootstrap][type] = "theme"
+; projects[twitter_bootstrap][subdir] = contrib
+; projects[twitter_bootstrap][version] = 2.x-dev
+projects[twitter_bootstrap][download][type] = "git"
+projects[twitter_bootstrap][download][url] = "http://git.drupal.org/project/twitter_bootstrap.git"
+projects[twitter_bootstrap][download][branch] = "7.x-2.x"
+projects[twitter_bootstrap][destination] = "themes/contrib/twitter_bootstrap"
+projects[twitter_bootstrap][subdir] = "contrib"
+; libraries[bootstrap][download][type] = "git"
+; libraries[bootstrap][download][url] = "git://github.com/twitter/bootstrap.git"
+libraries[bootstrap][download][type] = "get"
+libraries[bootstrap][download][url] = "http://twitter.github.com/bootstrap/assets/bootstrap.zip"
+libraries[bootstrap][destination] = "themes/contrib/twitter_bootstrap"   
 

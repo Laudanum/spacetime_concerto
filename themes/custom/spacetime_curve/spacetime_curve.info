@@ -1,0 +1,22 @@
+name = Spacetime Curve
+description = "Sub theme of Twitter Bootstrap for the Spacetime Concerto site."
+version = 0.2
+core = 7.x
+
+base theme = twitter_bootstrap
+
+regions[header]         = 'Top Bar'
+regions[highlighted]    = 'Highlighted'
+regions[help]           = 'Help'
+regions[content]        = 'Content'
+regions[sidebar_first]  = 'Primary'
+regions[sidebar_second] = 'Secondary'
+regions[footer]         = 'Footer'
+
+stylesheets[all][] = libs/css/spacetime.css
+stylesheets[all][] = libs/css/spacetime-responsive.css
+
+scripts[] = libs/js/spacetime.js
+
+settings[toggle_name] = 1
+settings[toggle_search] = 0
