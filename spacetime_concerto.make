@@ -5,6 +5,7 @@ projects[drupal][version] = "7.12"
 
 ; Modules
 projects[admin_menu][subdir] = "contrib"
+projects[admin_menu][patch][1030856-13] = "http://drupal.org/files/admin_menu-invalid-arg-admin_menu_merge_tree-1030856-13.patch"
 projects[advanced_help][subdir] = "contrib"
 projects[ctools][subdir] = "contrib"
 projects[ckeditor][subdir] = "contrib"
@@ -22,6 +23,9 @@ projects[webform_validation][subdir] = "contrib"
 ; patch to fix ajax callback error Undefined function webform_expand_select_ids()
 ; http://drupal.org/node/1332100
 projects[webform][patch][1132100-8] = "http://drupal.org/files/webform_include_components.patch"
+; patch to add token support to webforms (but not profile2 tokens)
+projects[webform][patch][1001798-39] = "http://drupal.org/files/1001798-use-tokens.patch"
+
 projects[libraries][subdir] = "contrib"
 projects[transliteration][subdir] = "contrib"
 projects[pathauto][subdir] = "contrib"
@@ -46,6 +50,11 @@ projects[webform_alt_ui][subdir] = "contrib"
 projects[form_builder][subdir] = "contrib"
 projects[options_element][subdir] = "contrib"
 projects[ux_elements][subdir] = "contrib"
+
+; campaign monitor
+projects[emf][subdir] = "contrib"
+projects[emf][version] = "1.x-dev"
+; projects[profile2][subdir] = "contrib"
 
 ; developer
 projects[devel][subdir] = "developer"
@@ -76,7 +85,7 @@ libraries[plupload][download][url] = "git://github.com/moxiecode/plupload.git"
 ; libraries[plupload][destination] = "libraries"   
 
 ; Commerce dependencies
-; projects[entity][subdir] = "contrib"
+projects[entity][subdir] = "contrib"
 projects[rules][subdir] = "contrib"
 ; projects[addressfield][subdir] = "contrib"
 ; 

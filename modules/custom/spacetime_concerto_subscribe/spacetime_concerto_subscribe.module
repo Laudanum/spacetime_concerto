@@ -1,0 +1,54 @@
+<?php
+/**
+ * Via http://drupal.org/node/1022916
+ * Implementation of hook_webform_component_mapping
+ * Used to parse the webform output into an easily accessible array
+ */
+function spacetime_concerto_subscribe_webform_component_mapping($node) {
+  $mapping = array();
+  $components = $node->webform['components'];
+  foreach ($components as $i => $component) {
+    $key = $component['form_key'];
+    $mapping[$key] = $i;
+  }
+  return $mapping;
+}
+
+
+/**
+ * Implementation of hook_webform_submission_insert
+ * Used to interrupt the submission of the no-event form and write CSV
+ */
+function spacetime_concerto_subscribe_webform_submission_insert($node, &$submission) {
+  if ($node->uuid == "52978cc0-2207-e874-453c-e45d595838a5") {
+    /**
+    * Call the mapping function to parse the webform array and output the variables
+    */
+    $mapping = spacetime_concerto_subscribe_webform_component_mapping($node);
+
+    /**
+     * Subscribe a user to a list.
+     *
+     * @param $email
+     *   String; E-mail address to subscribe
+     * @param $fields
+     *   Array; Array of custom field values. Key is field. Value is value for the field.
+     * @param $lid
+     *   String; List ID of the list to subscribe to.
+     * @return
+     *   Boolean; TRUE if user is subscribed. FALSE if not.
+     */
+    $mail = $submission->data[$mapping['email']]['value'][0];
+    $fields = array(
+      'name' => $submission->data[$mapping['name']]['value'][0], 
+      'Country' => $submission->data[$mapping['Country']]['value'][0],
+//      'Interest' => $submission->data[$mapping['Interest']]['value'][0],
+      'Fieldofinterest' => $submission->data[$mapping['Interest']]['value'],
+    );
+    $lid = "fb4834490e21f55cf75c7cfe9fa43cae";
+    $type = "subscribe";
+
+    emf_db_save_request($type, $mail, $lid, $fields);
+    drupal_set_message(t('You have been subscribed to the mailing list. If you wish to unsubscribe please do so using the unsubscribe details in the next email you receive. All your details will then be removed from our email database.'));    
+  }
+}

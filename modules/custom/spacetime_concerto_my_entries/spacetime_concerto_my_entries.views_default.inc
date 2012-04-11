@@ -37,11 +37,6 @@ function spacetime_concerto_my_entries_views_default_views() {
   $handler->display->display_options['relationships']['uid']['table'] = 'webform_submissions';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   $handler->display->display_options['relationships']['uid']['required'] = 1;
-  /* Relationship: Webform submissions: Node */
-  $handler->display->display_options['relationships']['nid']['id'] = 'nid';
-  $handler->display->display_options['relationships']['nid']['table'] = 'webform_submissions';
-  $handler->display->display_options['relationships']['nid']['field'] = 'nid';
-  $handler->display->display_options['relationships']['nid']['required'] = 1;
   /* Field: Webform submissions: Sid */
   $handler->display->display_options['fields']['sid']['id'] = 'sid';
   $handler->display->display_options['fields']['sid']['table'] = 'webform_submissions';
@@ -110,6 +105,55 @@ function spacetime_concerto_my_entries_views_default_views() {
   $handler->display->display_options['fields']['mail']['hide_empty'] = 0;
   $handler->display->display_options['fields']['mail']['empty_zero'] = 0;
   $handler->display->display_options['fields']['mail']['hide_alter_empty'] = 1;
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['name']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['name']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['name']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['name']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['name']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['name']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['name']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['name']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['name']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['name']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['name']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['name']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['name']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['name']['link_to_user'] = 0;
+  $handler->display->display_options['fields']['name']['overwrite_anonymous'] = 0;
+  $handler->display->display_options['fields']['name']['format_username'] = 1;
+  /* Field: Webform submissions: Draft */
+  $handler->display->display_options['fields']['is_draft']['id'] = 'is_draft';
+  $handler->display->display_options['fields']['is_draft']['table'] = 'webform_submissions';
+  $handler->display->display_options['fields']['is_draft']['field'] = 'is_draft';
+  $handler->display->display_options['fields']['is_draft']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['is_draft']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['is_draft']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['is_draft']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['is_draft']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['is_draft']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['is_draft']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['is_draft']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['is_draft']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['is_draft']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['is_draft']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['is_draft']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['is_draft']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['is_draft']['element_label_colon'] = 1;
+  $handler->display->display_options['fields']['is_draft']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['is_draft']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['is_draft']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['is_draft']['hide_alter_empty'] = 1;
   /* Field: Webform submissions: View link */
   $handler->display->display_options['fields']['view_submission']['id'] = 'view_submission';
   $handler->display->display_options['fields']['view_submission']['table'] = 'webform_submissions';
@@ -119,6 +163,15 @@ function spacetime_concerto_my_entries_views_default_views() {
   $handler->display->display_options['fields']['view_submission']['hide_empty'] = 0;
   $handler->display->display_options['fields']['view_submission']['empty_zero'] = 0;
   $handler->display->display_options['fields']['view_submission']['hide_alter_empty'] = 1;
+  /* Field: Webform submissions: Edit link */
+  $handler->display->display_options['fields']['edit_submission']['id'] = 'edit_submission';
+  $handler->display->display_options['fields']['edit_submission']['table'] = 'webform_submissions';
+  $handler->display->display_options['fields']['edit_submission']['field'] = 'edit_submission';
+  $handler->display->display_options['fields']['edit_submission']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['edit_submission']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['edit_submission']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['edit_submission']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['edit_submission']['hide_alter_empty'] = 1;
   /* Sort criterion: Webform submissions: Submitted */
   $handler->display->display_options['sorts']['submitted']['id'] = 'submitted';
   $handler->display->display_options['sorts']['submitted']['table'] = 'webform_submissions';
@@ -131,16 +184,16 @@ function spacetime_concerto_my_entries_views_default_views() {
   $handler->display->display_options['filters']['uid_current']['field'] = 'uid_current';
   $handler->display->display_options['filters']['uid_current']['relationship'] = 'uid';
   $handler->display->display_options['filters']['uid_current']['value'] = '1';
-  /* Filter criterion: Content: Nid */
-  $handler->display->display_options['filters']['nid']['id'] = 'nid';
-  $handler->display->display_options['filters']['nid']['table'] = 'node';
-  $handler->display->display_options['filters']['nid']['field'] = 'nid';
-  $handler->display->display_options['filters']['nid']['relationship'] = 'nid';
-  $handler->display->display_options['filters']['nid']['value']['value'] = '1';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'user/%/entries';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'My entries';
+  $handler->display->display_options['menu']['description'] = 'A list of all entries submitted.';
+  $handler->display->display_options['menu']['weight'] = '-20';
+  $handler->display->display_options['menu']['name'] = 'user-menu';
+  $handler->display->display_options['menu']['context'] = 0;
   $export['my_entries'] = $view;
 
   return $export;

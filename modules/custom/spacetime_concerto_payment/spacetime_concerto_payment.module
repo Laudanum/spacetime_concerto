@@ -1,1 +1,201 @@
 <?php
+/*
+  Create templates for views created by my_entries module.
+  views-view-fields--my-entries.tpl.php
+*/
+
+/**
+ * Implements hook_menu().
+ * Override path to `previous entries` with one to our own view. node/1/submissions
+ * Override path to `confirmation` page. node/1/done?sid=4
+ */
+function spacetime_concerto_payment_menu() {  
+  $entry_form_nid = 1;
+  $items['node/' . $entry_form_nid . '/submissions'] = array(
+//    'page callback' => 'drupal_goto',
+    'page callback' => 'spacetime_concerto_payment_my_entries',
+//    'page arguments' => array('user/%spacetime_concerto_payment_user_uid/entries'),
+    'access arguments' => array('access content'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  $items['node/' . $entry_form_nid . '/done'] = array(
+//    'page callback' => 'drupal_goto',
+    'page callback' => 'spacetime_concerto_payment_my_entries',
+//    'page arguments' => array('user/%spacetime_concerto_payment_user_uid/entries'),
+//    'page arguments' => array('_spacetime_concerto_payment_my_entries_path', array()),
+    'access arguments' => array('access content'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+
+/*
+  Callback for hook_menu - redirect to user/[uid]/entries ( defined by view).
+*/
+function spacetime_concerto_payment_my_entries($args=array()) {
+  drupal_goto(_spacetime_concerto_payment_my_entries_path());
+}
+
+
+/*
+  Construct the path to the my entries page.
+*/  
+function _spacetime_concerto_payment_my_entries_path($edit, $arg = NULL) {
+  global $user;
+  $uid = $user->uid ? $user->uid : 0;
+  return 'user/' . $uid . '/entries';
+}
+
+
+/**
+ * Implements hook_theme().
+ */
+function spacetime_concerto_payment_theme() {
+  return array(
+    'views_view_fields__my_entries' => array(
+      'variables' => array('view' => NULL, 'options' => NULL, 'row' => NULL),
+      'template' => 'views-view-fields--my-entries',
+      'base hook' => 'views_view_fields',
+      'path' => drupal_get_path('module', 'spacetime_concerto_payment'),
+    ),
+    'views_view__my_entries' => array(
+      'variables' => array('view' => NULL, 'options' => NULL, 'row' => NULL),
+      'template' => 'views-view--my-entries',
+      'base hook' => 'views_view',
+      'path' => drupal_get_path('module', 'spacetime_concerto_payment'),
+    ),    
+  );
+}
+
+
+/* Implementation of hook_views_view_fields.
+  Add a link to quickly add a new entry.
+  */
+function spacetime_concerto_payment_preprocess_views_view(&$vars) {
+  if ( $vars['name'] == 'my_entries') {
+    $vars['header'] .= l("Add new entry", "content/entry-form", array('attributes' => array('class' => 'add-link')));
+  }
+}
+
+
+/* Implementation of hook_views_view_fields_preprocessor
+  Load the submission and extract certain details.
+  */
+function spacetime_concerto_payment_preprocess_views_view_fields(&$vars) {
+//  kpr($vars);
+  global $user;
+
+  if ( $vars['view']->name == 'my_entries') {
+    $vars['sid'] = $vars['fields']['sid']->raw;
+
+  //  modules/contrib/webform/includes/webform.submissions.inc:773:    $new_submissions = webform_get_submissions(array('sid' => $sid));
+    module_load_include('inc', 'webform', 'includes/webform.submissions');
+    $submission = webform_get_submissions(array('sid' => $vars['sid']));
+    if ( ! count($submission) ) 
+      return;
+  //  we're only returning one submission so get that one
+    $submission = array_pop($submission);
+    $nid = $submission->nid;
+    $node = node_load($nid);
+  //  a list of components ordered by parent we're interested in.
+    $components = array(
+      0 => array(
+        'entry_contact_name_to_contact_about_this_application', 
+        'name_of_concerto', 
+        'mobile_phone', 
+        'contact_number'
+      ),
+      'admin_use' => array(
+        'payment_complete', 
+        'payment_date', 
+        'payment_receipt_number', 
+      )
+    );
+    foreach ( $components as $key=>$children ) {
+  //  the parent component if there is one
+      if ( is_int($key) )
+        $pid = $key;
+      else
+        $pid = webform_get_cid($node, $key, 0);
+
+  //  iterate over the components and create variables for the ones that exist.
+      foreach ( $children as $c_name ) {
+        $vars[$c_name] = "";
+        $cid = webform_get_cid($node, $c_name, $pid);
+        if ( ! $cid || ! array_key_exists($cid, $submission->data) )
+          continue;
+
+        if ( isset($submission->data[$cid]['value'][0]) ) {
+          $vars[$c_name] = $submission->data[$cid]['value'][0];
+        }
+      }
+    }
+  //  handle all the fields we need
+      $vars['submitted'] = date("j M Y", $vars['fields']['submitted']->raw);
+      $vars['title'] = $vars['name_of_concerto'] ? $vars['name_of_concerto'] : "[untitled]";
+      $vars['title'] = l($vars['title'], "node/" . $nid . "/submission/" . $vars['sid']);
+
+  //  view edit links
+      $vars['view_submission'] = $vars['fields']['view_submission']->content;
+      $vars['edit_submission'] = $vars['fields']['edit_submission']->content;
+//      $vars['edit_submission'] = l("edit", "node/" . $nid . "/submission/" . $vars['sid'] . "/edit");
+
+      $vars['draft'] = $vars['fields']['is_draft']->raw ? "This is a draft entry. " . l("Please don't forget to submit it.", "node/" . $nid . "/submission/" . $vars['sid'] . "/edit") : "";
+    
+      $vars['payment_date'] = strtotime ($vars['payment_date']);
+      $vars['payment_date'] = date("j M Y", $vars['payment_date']);
+    
+      $vars['status'] = $vars['payment_complete'] ? t("Paid") . " " . $vars['payment_date'] : null;
+      if ( ! $vars['payment_complete'] ) {
+        $vars['payment'] = _spacetime_concerto_payment_paypal_button("Entry fee #" . $vars['sid'] . " @" . $user->name, "35.00");
+      }
+    }
+}
+
+
+function _spacetime_concerto_payment_paypal_button($item_name = 'Entry fee', $amount = '35.00') {
+  global $user;
+  $uid = $user->uid;
+  
+  $sandbox = TRUE;
+  if ( $sandbox ) {
+	  $destinationUrl_ = 'https://www.sandbox.paypal.com/cgi-bin/webscr';
+	  $business = 'cnk_1299549188_biz@houseoflaudanum.com';
+  } else {
+	  $destinationUrl_ = 'https://www.paypal.com/cgi-bin/webscr';    
+	  $business = 'tredhead@newcastle.edu.au';
+  }
+  
+  $module_path = drupal_get_path('module', 'spacetime_concerto_payment');
+  require_once($module_path . "/paypal_php_wps_toolkit/lib/EWPServices.php");
+	
+	$service = new EWPServices();
+	$buttonParams_ = array(
+	 'cmd' => '_cart',
+	 'business' => $business,
+	 'currency_code' => 'AUD',
+	 'item_name' => $item_name,
+	 'amount' => $amount,
+	 'add' => 1,
+//	 'email' => $user->email,
+	);
+	$ewpCertPath_ = $module_path . '/private/spacetime-pubcert.pem';
+	$ewpPrivateKeyPath_ = $module_path . '/private/spacetime-prvkey.pem';
+	$ewpPrivateKeyPwd_ = '';
+	$paypalCertPath_ = $module_path . '/private/paypal_cert_pem';
+	$destinationUrl_ = $destinationUrl_;
+	$buttonImageUrl_ = 'http://www.paypalobjects.com/en_US/i/btn/x-click-but22.gif';
+	
+	$payment = $service->encryptButton($buttonParams_,
+							$ewpCertPath_,
+							$ewpPrivateKeyPath_,
+							$ewpPrivateKeyPwd_,
+							$paypalCertPath_,
+							$destinationUrl_,
+							$buttonImageUrl_);
+
+	if ( $payment['status'] )
+	  return $payment['encryptedButton'];
+	else
+	  return FALSE;
+}

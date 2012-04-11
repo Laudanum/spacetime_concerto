@@ -18,7 +18,7 @@ dependencies[] = block
 ; dependencies[] = blog
 ; dependencies[] = book
 ; dependencies[] = color
-; dependencies[] = comment
+dependencies[] = comment
 dependencies[] = contact
 dependencies[] = contextual
 dependencies[] = dashboard
@@ -58,6 +58,13 @@ dependencies[] = token
 dependencies[] = webform
 dependencies[] = webform_validation
 
+; mailing list integration
+dependencies[] = campaignmonitor
+dependencies[] = campaignmonitor_registration
+dependencies[] = campaignmonitor_user
+dependencies[] = profile2
+dependencies[] = entity_token
+
 ; webform alt ui and dependencies
 ; dependencies[] = webform_alt_ui
 ; dependencies[] = form_builder
@@ -94,7 +101,7 @@ dependencies[] = plupload
 ; dependencies for commerce
 ; dependencies[] = addressfield
 dependencies[] = ctools
-; dependencies[] = entity
+dependencies[] = entity
 ; dependencies[] = entity_token
 dependencies[] = rules
 dependencies[] = rules_admin
