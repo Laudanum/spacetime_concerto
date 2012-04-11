@@ -22,9 +22,9 @@ projects[webform][subdir] = "contrib"
 projects[webform_validation][subdir] = "contrib"
 ; patch to fix ajax callback error Undefined function webform_expand_select_ids()
 ; http://drupal.org/node/1332100
-projects[webform][patch][1132100-8] = "http://drupal.org/files/webform_include_components.patch"
+; projects[webform][patch][1132100-8] = "http://drupal.org/files/webform_include_components.patch"
 ; patch to add token support to webforms (but not profile2 tokens)
-projects[webform][patch][1001798-39] = "http://drupal.org/files/1001798-use-tokens.patch"
+; projects[webform][patch][1001798-39] = "http://drupal.org/files/1001798-use-tokens.patch"
 
 projects[libraries][subdir] = "contrib"
 projects[transliteration][subdir] = "contrib"
@@ -35,7 +35,7 @@ projects[google_analytics][subdir] = "contrib"
 projects[wysiwyg][subdir] = "contrib"
 projects[features][subdir] = "contrib"
 ; patch features to handle shortcut sets http://drupal.org/node/986968
-projects[features][patch][986968] = http://drupal.org/files/issues/features.shortcut_sets_0.patch
+; projects[features][patch][986968] = http://drupal.org/files/issues/features.shortcut_sets_0.patch
 
 libraries[ckeditor][download][type] = "get"
 libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.4.2/ckeditor_3.4.2.tar.gz"
