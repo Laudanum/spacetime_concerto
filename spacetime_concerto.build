@@ -23,5 +23,5 @@ projects[drupal][patch][995156] = http://drupal.org/files/issues/995156-5_portab
 
 projects[spacetime_concerto][type] = "profile"
 projects[spacetime_concerto][download][type] = "git"
-projects[spacetime_concerto][download][url] = "git://github.com/Laudanum/spacetime_concerto.git"
+projects[spacetime_concerto][download][url] = "git@github.com:Laudanum/spacetime_concerto.git"
 projects[spacetime_concerto][download][branch] = "master"
