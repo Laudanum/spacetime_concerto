@@ -139,3 +139,9 @@ dependencies[] = views_ui
 ; 
 ; ; commerce webform module is poorly named
 ; dependencies[] = webform_commerce
+
+; Information added by drush on 2012-04-11
+version = "master-dev"
+project = "spacetime_concerto"
+datestamp = "1334134960"
+

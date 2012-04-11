@@ -9,3 +9,10 @@ dependencies[] = "views"
 dependencies[] = "webform"
 features[ctools][] = "views:views_default:3.0"
 features[views_view][] = "my_entries"
+
+
+; Information added by drush on 2012-04-11
+version = "master-dev"
+project = "spacetime_concerto"
+datestamp = "1334134960"
+

@@ -20,3 +20,10 @@ scripts[] = libs/js/spacetime.js
 
 settings[toggle_name] = 1
 settings[toggle_search] = 0
+
+
+; Information added by drush on 2012-04-11
+version = "master-dev"
+project = "spacetime_concerto"
+datestamp = "1334134960"
+

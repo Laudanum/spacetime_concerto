@@ -52,9 +52,11 @@ projects[options_element][subdir] = "contrib"
 projects[ux_elements][subdir] = "contrib"
 
 ; campaign monitor
-projects[emf][subdir] = "contrib"
-projects[emf][version] = "1.x-dev"
+; projects[emf][subdir] = "contrib"
+; projects[emf][version] = "1.x-dev"
 ; projects[profile2][subdir] = "contrib"
+projects[campaignmonitor][subdir] = "contrib"
+projects[profile2][subdir] = contrib
 
 ; developer
 projects[devel][subdir] = "developer"

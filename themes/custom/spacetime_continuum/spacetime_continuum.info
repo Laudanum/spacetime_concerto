@@ -19,3 +19,10 @@ regions[bottom_3] = Bottom 3
 regions[bottom_4] = Bottom 4
 regions[footer] = Footer
 regions[page_bottom] = Page bottom
+
+
+; Information added by drush on 2012-04-11
+version = "master-dev"
+project = "spacetime_concerto"
+datestamp = "1334134960"
+

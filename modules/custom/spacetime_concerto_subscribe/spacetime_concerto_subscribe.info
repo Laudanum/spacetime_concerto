@@ -21,3 +21,10 @@ features[variable][] = "emf_last_sync_subscriptions"
 features[variable][] = "emf_sync_requests_interval"
 features[variable][] = "emf_sync_structure_interval"
 features[variable][] = "emf_sync_subscriptions_interval"
+
+
+; Information added by drush on 2012-04-11
+version = "master-dev"
+project = "spacetime_concerto"
+datestamp = "1334134960"
+
