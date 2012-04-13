@@ -81,6 +81,7 @@ dependencies[] = xmlsitemap
 dependencies[] = googleanalytics
 dependencies[] = wysiwyg
 dependencies[] = features
+dependencies[] = jquery_update
 
 ; features for webform
 dependencies[] = uuid

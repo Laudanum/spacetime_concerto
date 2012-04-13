@@ -130,4 +130,6 @@ projects[twitter_bootstrap][subdir] = "contrib"
 libraries[bootstrap][download][type] = "get"
 libraries[bootstrap][download][url] = "http://twitter.github.com/bootstrap/assets/bootstrap.zip"
 libraries[bootstrap][destination] = "themes/contrib/twitter_bootstrap"   
-
+; twitter bootstrap requires 1.7 jquery
+projects[jquery_update][destination] = "contrib"
+projects[jquery_update][destination] = "7.x-2.x-dev"
