@@ -1,0 +1,137 @@
+/*
+@todo convert to less
+blue text 3d8fc2
+*/
+
+body {
+  background-color: #efede6;
+  background-image: url(../images/background-480.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  
+  padding-top: 120px;
+}
+
+body.toolbar-drawer {
+  padding-top: 205px ! important;
+  background-position: center 65px;
+}
+
+a, h1, h2, h3, h4, h5, h6, .page-header {
+  color : #3d8fc2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Ubuntu Medium', sans-serif;
+  font-weight: normal;
+}
+
+a {
+  padding-bottom : 1px;
+}
+
+a:hover {
+  text-decoration : none;
+  border-bottom: 1px solid #3d8fc2;
+}
+
+#navbar {
+  height: 120px;
+  overflow: hidden;
+}
+
+.navbar-inner {
+  background: none;
+}
+
+.navbar .brand {
+  color: black;
+}
+
+#main-menu {
+  float : right;
+  margin-top : 55px;
+}
+.navbar .nav > li {
+  margin-left: 30px;
+}
+.navbar .nav > li > a {
+  color: black;
+  text-shadow: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size : 14px;
+  padding: 0 0 8px 0;
+}
+
+.navbar .nav > li > a:hover {
+  border-bottom: 2px dotted black;
+  color : black;
+}
+
+/* centre panel */
+section {
+  background-color : white;
+  border-radius: 5px;
+  padding: 34px 0 34px 0;
+}
+
+section > *, section > h1.page-header {
+    margin: 0 40px 0 40px;
+}
+
+.page-header, .footer {
+  border: none;
+}
+
+/* sidebars */
+section[class*="span"] + aside,
+aside + section[class*="span"] {
+  margin-left: 0px;
+}
+
+.well {
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+aside {
+  margin-top: 42px;
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border: 1px solid #eeeeee;
+  background-image: url(../images/background-aside-left.png);
+  background-repeat: repeat-y;
+  background-position: right center;
+}
+
+aside section {
+  border-radius: 0px;
+  margin: 0 24px 0 24px;
+  background: none;
+}
+
+aside section > * {
+  margin: 0;
+}
+
+/* right sidebar */
+section[class*="span"] + aside {
+  border-radius: 5px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: 1px solid #eeeeee;
+  border-right: none;
+  background-image: url(../images/background-aside-right.png);
+  background-position: left center;
+}
+
+.footer section {
+  background: none;
+}
