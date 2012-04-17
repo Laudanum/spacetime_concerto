@@ -8,12 +8,19 @@ body {
   background-image: url(../images/background-480.jpg);
   background-repeat: no-repeat;
   background-position: center top;
-  
+  /*
+  for fixed only
   padding-top: 120px;
+  */
+  padding-top: 0;
 }
 
 body.toolbar-drawer {
+  /*
+  for fixed only
   padding-top: 205px ! important;
+  */
+  padding-top: 0px ! important;
   background-position: center 65px;
 }
 
@@ -33,6 +40,10 @@ a {
 a:hover {
   text-decoration : none;
   border-bottom: 1px solid #3d8fc2;
+}
+
+.navbar-fixed-top {
+  position: relative;
 }
 
 #navbar {
@@ -67,6 +78,13 @@ a:hover {
 .navbar .nav > li > a:hover {
   border-bottom: 2px dotted black;
   color : black;
+}
+
+/* top bar - region-header */
+.region-header section {
+  background: none;
+  border: none;
+  border-radius: 0;
 }
 
 /* centre panel */
