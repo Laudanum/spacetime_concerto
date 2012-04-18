@@ -26,7 +26,7 @@ admin > Repository Administration > Service Hooks > Post-Receive URLs
 */
 
   $DRUPAL = "/srv/www/spacetimeconcerto.com/versions/v0.2";
-  $TREE   = "$DRUPAL/profiles/spacetime_concerto";
+  $TREE   = "/srv/www/spacetimeconcerto.com/versions/v0.2/profiles/spacetime_concerto";
   $REPO   = "$TREE/.git";
   $URI    = "staging.spacetimeconcerto.com";
   
