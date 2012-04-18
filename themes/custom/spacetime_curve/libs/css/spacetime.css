@@ -165,14 +165,16 @@ section[class*="span"] + aside {
 }
 
 /* user menu */
+#user-menu {
+  margin-left: 1065px;
+  position: absolute;
+}
 #user-menu a.btn {
   background: none;
   border: none;
   color: black;
   text-shadow: none;
   box-shadow: none;
-  margin-left: 1065px;
-  position: absolute;
 }
 
 .footer section {
