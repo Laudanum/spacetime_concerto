@@ -53,6 +53,9 @@ a:hover {
 
 .navbar-inner {
   background: none;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
 }
 
 .navbar .brand {
