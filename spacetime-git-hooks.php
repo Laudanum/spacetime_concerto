@@ -46,7 +46,7 @@ admin > Repository Administration > Service Hooks > Post-Receive URLs
   
   function run_cmd($command) {
     echo "<pre>";
-    echo $command . "\n<strong>";
+    echo $command . "\n<strong style='color:red'>";
     flush();
     echo shell_exec($command);
     echo "</strong>\n";
