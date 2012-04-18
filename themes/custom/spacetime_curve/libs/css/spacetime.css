@@ -37,13 +37,18 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
 
-#site-name-slogan h1 {
+#site-name-slogan h1 a {
+  margin-top: 20px;
   text-indent: -9999px;
   background-image: url(../images/logo-competition.png);
   background-repeat: no-repeat;
   width: 357px;
   height: 94px;
   position: absolute;
+  display: block;
+}
+#site-name-slogan h1 a:hover {
+  border: none;
 }
 a {
   padding-bottom : 1px;
@@ -69,6 +74,7 @@ a:hover {
   box-shadow: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
+  height: 120px;
 }
 
 .navbar .brand {
@@ -223,3 +229,10 @@ section[class*="span"] + aside {
   background: none;
 }
 
+/* these should make it in to twitter-bootstrap */
+div.error {
+  background-repeat: no-repeat;
+}
+
+/* from loggintobbogan - should be tabs or buttons */
+#login-links a.login-link {}
