@@ -25,7 +25,7 @@ sudo -u www-data git --git-dir=/home/laudanum/public_html/blackbeetle.com.au/bla
 admin > Repository Administration > Service Hooks > Post-Receive URLs
 */
 
-  $DRUPAL = "/srv/www/spacetimeconcerto.com/source";
+  $DRUPAL = "/srv/www/spacetimeconcerto.com/versions/v0.2";
   $TREE   = "$TREE/profiles/spacetime_concerto";
   $REPO   = "$TREE/.git";
   $URI    = "staging.spacetimeconcerto.com";
