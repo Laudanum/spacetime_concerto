@@ -32,35 +32,25 @@ admin > Repository Administration > Service Hooks > Post-Receive URLs
   
 // Use in the "Post-Receive URLs" section of your GitHub repo.
   if ( $_REQUEST['payload'] ) {
-    echo "<pre>";
-    $command = "git --git-dir=$REPO reset --hard HEAD";
-    echo $command . "\n";
-    flush();
-    
-    echo shell_exec($command) . "\n";
-    flush();
-    
+    run_cmd("git --git-dir=$REPO reset --hard HEAD");
+
 //  apache doesn't have `cd` so use fetch/merge instead
-    $command = "git --git-dir=$REPO fetch";
-    echo $command . "\n";
-    flush();
-    echo shell_exec($command) . "\n";
-    flush();
-    
-    $command = "git --git-dir=$REPO --work-tree=$TREE merge origin/master";
-    echo $command . "\n";
-    flush();
-    echo shell_exec($command);
-    flush();
+    run_cmd("git --git-dir=$REPO fetch");    
+    run_cmd("git --git-dir=$REPO --work-tree=$TREE merge origin/master");
     
 //  drush cc all redirect stderr to stdout
-    $command = "drush -r $DRUPAL --uri=$URI cc all  2>&1";
-    echo $command . "\n";
-    flush();
-    echo shell_exec($command);
-    flush();
-    
-    echo "</pre>";
+    run_cmd("drush -r $DRUPAL --uri=$URI cc all  2>&1");
   }
   print "\nOK";
+  
+  
+  function run_cmd($command) {
+    echo "<pre>";
+    echo $command . "\n<strong>";
+    flush();
+    echo shell_exec($command);
+    echo "</strong>\n";
+    echo "</pre>";
+    flush();
+  }
 ?>
