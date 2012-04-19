@@ -32,6 +32,8 @@ admin > Repository Administration > Service Hooks > Post-Receive URLs
   
 // Use in the "Post-Receive URLs" section of your GitHub repo.
   if ( $_REQUEST['payload'] ) {
+    error_log(var_export($_REQUEST['payload'], TRUE));
+    
     run_cmd("git --git-dir=$REPO reset --hard HEAD");
 
 //  apache doesn't have `cd` so use fetch/merge instead
