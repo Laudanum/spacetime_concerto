@@ -2,15 +2,18 @@
     $(document).ready(function(){
 
         modals = 0;
-
+        
 //  load all the modals we need
         var preloadModal = function(obj) {
             uri = $(obj).attr("href");
-            modals++;
             if ( ! uri )
                 return false;
+//  should check whether we need another version of this first
+//   use modals = new Array() instead
+            modals++;
                 
 //  get the rendered node without the page decoration ( uses page--render.tpl)
+
             $.post(uri, {'render':true, 'trigger':"modal-trigger-" + modals}, function(data) {
 //  we should check if this element has already been appended
 //  perhaps use $.clone() for this

@@ -19,7 +19,7 @@ function spacetime_concerto_subscribe_webform_component_mapping($node) {
  * Implementation of hook_webform_submission_insert
  * Used to interrupt the submission of the no-event form and write CSV
  */
-function spacetime_concerto_subscribe_webform_submission_insert($node, &$submission) {
+function spacetime_concerto_subscribe_webform_submission_insert($node, $submission) {
   if ($node->uuid == "52978cc0-2207-e874-453c-e45d595838a5") {
     /**
     * Call the mapping function to parse the webform array and output the variables
