@@ -254,10 +254,6 @@ aside section ul.menu li a {
   border-bottom: 1px solid transparent;
   color: #3d8fc2;
 }
-aside section ul.menu li a:hover {
-  border-bottom: 1px solid #3d8fc2;
-  background: none;
-}
 
 .footer section {
   background: none;
