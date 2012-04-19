@@ -68,6 +68,15 @@ a:hover {
   border-top-color: #888888;
   border-bottom-color: #888888;
 }
+
+aside section ul.menu li a:hover,
+.dropdown-menu li > a:hover,
+.dropdown-menu .active > a,
+.dropdown-menu .active > a:hover {
+  background-color: #3d8fc2;
+  border-bottom: none;
+  color: white;
+}
 #navbar {
   height: 120px;
 }
