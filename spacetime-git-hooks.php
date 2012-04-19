@@ -31,6 +31,7 @@ admin > Repository Administration > Service Hooks > Post-Receive URLs
   $URI    = "staging.spacetimeconcerto.com";
   
 // Use in the "Post-Receive URLs" section of your GitHub repo.
+  error_log(var_export($_REQUEST['payload'], TRUE));
   if ( $_REQUEST['payload'] ) {
     error_log(var_export($_REQUEST['payload'], TRUE));
     
@@ -47,6 +48,7 @@ admin > Repository Administration > Service Hooks > Post-Receive URLs
   
   
   function run_cmd($command) {
+    error_log($command);
     echo "<pre>";
     echo $command . "\n<strong style='color:red'>";
     flush();
