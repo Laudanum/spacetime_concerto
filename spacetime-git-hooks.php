@@ -36,7 +36,7 @@ admin > Repository Administration > Service Hooks > Post-Receive URLs
 //    error_log(var_export($_REQUEST['payload'], TRUE));
   
 //  move all of this into a shell script as github is giving up
-    run_cmd("sh $TREE/spacetime-post-receive.sh > /dev/null 2>/dev/null &")
+    run_cmd("sh $TREE/spacetime-post-receive.sh > /dev/null 2>/dev/null &");
 /*
     run_cmd("git --git-dir=$REPO reset --hard HEAD");
 
