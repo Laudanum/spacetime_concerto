@@ -64,6 +64,10 @@ a:hover {
   z-index: auto;
 }
 
+.navbar .nav .dropdown-toggle .caret, .navbar .nav .open.dropdown .caret {
+  border-top-color: #888888;
+  border-bottom-color: #888888;
+}
 #navbar {
   height: 120px;
 }
@@ -86,6 +90,7 @@ a:hover {
   margin-right : 40px;
   font-family: 'Ubuntu', Arial, Helvetica, sans-serif;  
 }
+
 .navbar .nav > li {
   margin-left: 30px;
 }
@@ -98,7 +103,8 @@ a:hover {
   padding: 0 0 8px 0;
 }
 
-.navbar .nav > li > a:hover {
+.navbar .nav > li > a:hover,
+.navbar .nav > li.dropdown.open > a {
   border-bottom: 2px dotted black;
   color : black;
 }
@@ -235,9 +241,12 @@ aside section ul.menu li {
   list-style-image: none;
 }
 aside section ul.menu li a {
+  font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
   border-bottom: 1px solid transparent;
+  color: #3d8fc2;
 }
 aside section ul.menu li a:hover {
+  border-bottom: 1px solid #3d8fc2;
   background: none;
 }
 
