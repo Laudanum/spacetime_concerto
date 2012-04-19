@@ -66,7 +66,6 @@ a:hover {
 
 #navbar {
   height: 120px;
-  overflow: hidden;
 }
 
 .navbar-inner {
@@ -119,9 +118,10 @@ a:hover {
 }
 .region-header aside ol li {
   margin-bottom: 0.5em;
+  line-height: 1.2em;
 }
 .region-header aside ol {
-  margin: 10px 20px;
+  margin: 80px 20px;
 }
 .region-header aside a.btn {
   font-size: 18px;
@@ -140,7 +140,11 @@ section {
   padding: 30px 0 30px 0;
 }
 .row aside section {
-  padding: 20px 0 0px 0;
+  padding: 0px 0 20px 0;
+}
+
+.row aside .region {
+  padding-top: 20px;
 }
 
 section > *, section > h1.page-header {
@@ -225,6 +229,18 @@ section[class*="span"] + aside {
   box-shadow: none;
 }
 
+/* sidebar menus */
+aside section ul.menu li {
+  list-style: none;
+  list-style-image: none;
+}
+aside section ul.menu li a {
+  border-bottom: 1px solid transparent;
+}
+aside section ul.menu li a:hover {
+  background: none;
+}
+
 .footer section {
   background: none;
 }
@@ -236,3 +252,7 @@ div.error {
 
 /* from loggintobbogan - should be tabs or buttons */
 #login-links a.login-link {}
+  
+.breadcrumb {
+  display: none;
+}

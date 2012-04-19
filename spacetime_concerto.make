@@ -79,6 +79,7 @@ libraries[colorbox][download][type] = "git"
 libraries[colorbox][download][url] = "git://github.com/jackmoore/colorbox.git"
 libraries[colorbox][destination] = "libraries"   
 
+projects[imageblock][subdir] = "contrib"
 ; multifile upload
 projects[plupload][subdir] = "contrib"
 projects[plupload][version] = "1.x-dev"
