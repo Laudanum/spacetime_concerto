@@ -149,7 +149,7 @@ aside section ul.menu li a:hover,
   line-height: 1.2em;
 }
 .region-header aside ol {
-  margin: 80px 20px;
+  margin: 80px 20px 40px 20px;
 }
 .region-header aside a.btn {
   font-size: 18px;
@@ -231,6 +231,10 @@ aside section {
 
 aside section > * {
   margin: 0;
+}
+
+aside section h2 {
+  margin-left: 24px;
 }
 
 /* right sidebar */

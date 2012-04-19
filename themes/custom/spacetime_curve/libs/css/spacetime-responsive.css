@@ -8,17 +8,50 @@
   body {
     background-image : url(../images/background-768.jpg);
   }
+  .region-header section iframe {
+    width: 100%;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
   body {
     background-image : url(../images/background-980.jpg);
   }
+  /* 853 x 480 */
+  .region-header section iframe {
+    max-width: 538px;
+    max-height: 303px;
+  }
+  .region-header aside {
+    font-size: 16px;
+  }
+  .region-header aside .small {
+    font-size: 11px;
+    line-height: 1.2em;
+    display: none;
+  }
+  .region-header aside ol {
+    margin: 40px 10px 20px 10px;
+  }
+  
+  .region-header aside ol li {
+    margin-bottom: 0.8em;
+  }
+
 }
 
 @media (min-width: 980px) and (max-width: 1199px) {
   body {
     background-image : url(../images/background-1200.jpg);
+  }
+  /* 853 x 480 */
+  .region-header section iframe {
+    max-width: 700px;
+    max-height: 394px;
+  }
+  .small {
+    font-size: 11px;
+    line-height: 1.2em;
   }
 }
 
