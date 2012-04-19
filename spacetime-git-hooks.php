@@ -48,7 +48,7 @@ admin > Repository Administration > Service Hooks > Post-Receive URLs
     run_cmd("drush -r $DRUPAL --uri=$URI cc all  2>&1");
 */
   }
-  print "\nOK";
+  print "\nOK.";
   
   
   function run_cmd($command) {
