@@ -33,8 +33,11 @@ admin > Repository Administration > Service Hooks > Post-Receive URLs
 // Use in the "Post-Receive URLs" section of your GitHub repo.
   error_log(var_export($_REQUEST['payload'], TRUE));
   if ( $_REQUEST['payload'] ) {
-    error_log(var_export($_REQUEST['payload'], TRUE));
-    
+//    error_log(var_export($_REQUEST['payload'], TRUE));
+  
+//  move all of this into a shell script as github is giving up
+    run_cmd("sh $TREE/spacetime-post-receive.sh")
+/*
     run_cmd("git --git-dir=$REPO reset --hard HEAD");
 
 //  apache doesn't have `cd` so use fetch/merge instead
@@ -43,6 +46,7 @@ admin > Repository Administration > Service Hooks > Post-Receive URLs
     
 //  drush cc all redirect stderr to stdout
     run_cmd("drush -r $DRUPAL --uri=$URI cc all  2>&1");
+*/
   }
   print "\nOK";
   
