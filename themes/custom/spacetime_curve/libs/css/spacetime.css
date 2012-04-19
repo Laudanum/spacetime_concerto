@@ -283,6 +283,11 @@ div.error {
   background-repeat: no-repeat;
 }
 
+/* why does bootstrap do this ? */
+.radio input[type="radio"], .checkbox input[type="checkbox"] {
+  margin-left: 0;
+}
+
 /* from loggintobbogan - should be tabs or buttons */
 #login-links a.login-link {}
   
