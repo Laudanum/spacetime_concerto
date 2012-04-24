@@ -35,6 +35,12 @@
   .region-header aside ol {
     margin: 20px 10px 20px 10px;
   }
+  #site-name-slogan h1 a {
+    background-image: url(../images/logo-competition-180.png);
+    background-repeat: no-repeat;
+    width: 180px;
+    height: 47px;
+  }  
   
   .region-header aside ol li {
     margin-bottom: 0.8em;
@@ -58,6 +64,12 @@
   .region-header aside ol {
     margin: 20px 10px 10px 10px;
   }
+  #site-name-slogan h1 a {
+    background-image: url(../images/logo-competition-240.png);
+    background-repeat: no-repeat;
+    width: 240px;
+    height: 63px;
+  }  
   .small {
     font-size: 11px;
     line-height: 1.2em;
