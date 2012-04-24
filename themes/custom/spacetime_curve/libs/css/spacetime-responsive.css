@@ -2,6 +2,12 @@
   body {
     background-image : url(../images/background-480.jpg);
   }
+  #site-name-slogan h1 a {
+    background-image: url(../images/logo-competition-240.png);
+    width: 240px;
+    height: 63px;
+    margin-left: 50px;
+  }  
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
@@ -11,6 +17,12 @@
   .region-header section iframe {
     width: 100%;
   }
+  #site-name-slogan h1 a {
+    background-image: url(../images/logo-competition-240.png);
+    width: 240px;
+    height: 63px;
+    margin-left: 50px;
+  }  
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
@@ -36,10 +48,10 @@
     margin: 20px 10px 20px 10px;
   }
   #site-name-slogan h1 a {
-    background-image: url(../images/logo-competition-180.png);
-    background-repeat: no-repeat;
-    width: 180px;
-    height: 47px;
+    background-image: url(../images/logo-competition-240.png);
+    width: 240px;
+    height: 63px;
+    margin-left: 50px;
   }  
   
   .region-header aside ol li {
