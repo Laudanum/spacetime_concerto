@@ -147,7 +147,7 @@ function spacetime_concerto_payment_preprocess_views_view_fields(&$vars) {
     
       $vars['status'] = $vars['payment_complete'] ? t("Paid") . " " . $vars['payment_date'] : null;
       if ( ! $vars['payment_complete'] ) {
-        $vars['payment'] = _spacetime_concerto_payment_paypal_button("Entry fee #" . $vars['sid'] . " @" . $user->name, "35.00");
+        $vars['payment'] = _spacetime_concerto_payment_paypal_button("Entry fee #" . $vars['sid'] . " @" . $user->name, "30.00");
       }
     }
 }
