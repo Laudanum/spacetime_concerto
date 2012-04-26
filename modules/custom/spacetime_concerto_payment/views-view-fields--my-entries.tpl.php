@@ -39,7 +39,7 @@
 ?>
   Paid <?php echo $payment_date; ?><br />
 <?php else: 
-  $fee = "35.00";
+  $fee = "30.00";
 ?>
   <span class="fee">AUD $<?php echo $fee; ?></span>
   <?php echo $payment; ?>
