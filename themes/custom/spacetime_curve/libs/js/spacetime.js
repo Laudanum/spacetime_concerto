@@ -11,6 +11,18 @@
 //  should check whether we need another version of this first
 //   use modals = new Array() instead
             modals++;
+
+//  add our destination so that we return at the end
+            destination = $('link[rel=canonical]').attr('href');
+            if ( ! destination ) {
+                destination = 'node';
+            }
+            if (uri.indexOf('?') > 0 ) {
+                uri += "&";
+            } else {
+                uri += "?";
+            }
+            uri += 'destination=' + destination;
                 
 //  get the rendered node without the page decoration ( uses page--render.tpl)
 
