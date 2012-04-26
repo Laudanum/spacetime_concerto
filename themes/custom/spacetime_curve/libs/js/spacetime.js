@@ -47,6 +47,8 @@
             target = $("[data-trigger=" + target + "]");
             if ( $(target).size() ) {
                 e.preventDefault();
+//  add the form-inline class to forms
+                $(target).find('form').addClass("form form-inline");
                 $(target).modal();
             };
         });
