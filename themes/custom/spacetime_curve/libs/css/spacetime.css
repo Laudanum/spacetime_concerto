@@ -343,5 +343,8 @@ form.form-inline label {
   width: 270px;
   height: 95px;
   border: none;
+}
 
+section a.sponsor {
+  margin-right: 10px;
 }
