@@ -28,11 +28,11 @@ body.toolbar-drawer header + .container {
   margin-top : 65px;
 }
 
-a, h1, h2, h3, h4, h5, h6, .page-header {
+#login-message, a, h1, h2, h3, h4, h5, h6, .page-header {
   color : #3d8fc2;
 }
 
-h1, h2, h3, h4, h5, h6 {
+#login-message, h1, h2, h3, h4, h5, h6 {
   font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
   font-weight: normal;
 }
@@ -298,6 +298,9 @@ div.error {
 
 /* from loggintobbogan - should be tabs or buttons */
 #login-links a.login-link {}
+#login-message {
+  font-size: 18px;
+}
   
 .breadcrumb {
   display: none;
