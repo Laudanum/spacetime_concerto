@@ -335,12 +335,13 @@ form.form-inline label {
 }
 
 .region-header aside a.logo {
-  background-image: url(../images/logo-uon-270.png);
+  background-image: url(../images/logo-uon-166.png);
   background-repeat: no-repeat;
   text-indent: -999px;
   display: block;
+  margin-top: 40px;
   width: 270px;
   height: 95px;
   border: none;
-  
+
 }
