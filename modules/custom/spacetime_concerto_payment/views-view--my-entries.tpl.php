@@ -52,7 +52,7 @@
   <?php endif; ?>
 
   <?php if ($rows): ?>
-    <table class="view-content">
+    <table class="view-content table table-condensed table-striped">
       <thead>
         <th>#</th>
         <th>Date</th>
