@@ -325,3 +325,11 @@ div.error {
 .hero-unit aside[class*="span"] > * {
   
 }
+
+form.form-inline label {
+  min-width: 60px;
+}
+
+.form-item {
+  margin-bottom: 0.5em;
+}
