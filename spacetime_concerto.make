@@ -52,6 +52,8 @@ projects[form_builder][subdir] = "contrib"
 projects[options_element][subdir] = "contrib"
 projects[ux_elements][subdir] = "contrib"
 
+projects[menu_token][subdir] = "contrib"
+
 ; campaign monitor
 projects[emf][subdir] = "contrib"
 projects[emf][version] = "1.x-dev"
