@@ -8,6 +8,11 @@
     height: 63px;
     margin-left: 50px;
   }  
+  .region-header aside a.logo {
+    background-image: url(images/uon-logo-270.png);
+    width: 270px;
+    height: 95px;
+  }
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
@@ -22,7 +27,7 @@
     width: 240px;
     height: 63px;
     margin-left: 50px;
-  }  
+  }
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
@@ -60,6 +65,11 @@
   aside .block-image img {
     max-width: 118px;
   }
+  .region-header aside a.logo {
+    background-image: url(images/uon-logo-166.png);
+    width: 166px;
+    height: 58px;
+  }
 }
 
 @media (min-width: 980px) and (max-width: 1199px) {
@@ -92,6 +102,11 @@
   section a.sponsor img {
     max-width: 80px;
     max-height: 60px;
+  }
+  .region-header aside a.logo {
+    background-image: url(images/uon-logo-220.png);
+    width: 220px;
+    height: 77px;
   }
 }
 

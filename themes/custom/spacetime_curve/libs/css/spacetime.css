@@ -333,3 +333,12 @@ form.form-inline label {
 .form-item {
   margin-bottom: 0.5em;
 }
+
+.region-header aside a.logo {
+  background-image: url(images/uon-logo-270.png);
+  background-repeat: no-repeat;
+  text-indent: -999px;
+  display: block;
+  width: 270px;
+  height: 95px;
+}
