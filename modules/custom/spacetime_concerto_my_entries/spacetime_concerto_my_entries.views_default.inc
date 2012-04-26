@@ -23,7 +23,10 @@ function spacetime_concerto_my_entries_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'My entries';
-  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    2 => '2',
+  );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
@@ -194,6 +197,29 @@ function spacetime_concerto_my_entries_views_default_views() {
   $handler->display->display_options['menu']['weight'] = '-20';
   $handler->display->display_options['menu']['name'] = 'user-menu';
   $handler->display->display_options['menu']['context'] = 0;
+  $translatables['my_entries'] = array(
+    t('Master'),
+    t('My entries'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('Webform Submission User'),
+    t('Entry number'),
+    t('.'),
+    t(','),
+    t('Submitted'),
+    t('E-mail'),
+    t('Draft'),
+    t('view'),
+    t('edit'),
+    t('Page'),
+  );
   $export['my_entries'] = $view;
 
   return $export;
