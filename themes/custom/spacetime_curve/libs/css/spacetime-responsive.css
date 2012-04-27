@@ -161,6 +161,12 @@
     clear: both;
     position: relative;
   }
+  #user-menu a.btn {
+    text-transform: uppercase;
+  }
+  #user-menu a {
+    padding: 6px 0 6px 30px;
+  }
 }
 
 @media (min-width: 980px) {
