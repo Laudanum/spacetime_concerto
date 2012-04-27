@@ -58,6 +58,9 @@
     height: 63px;
     margin-left: 50px;
   }  
+  #user-menu {
+    margin-left: 648px;
+  }
   
   .region-header aside ol li {
     margin-bottom: 0.8em;
@@ -91,7 +94,11 @@
     background-repeat: no-repeat;
     width: 240px;
     height: 63px;
-  }  
+  }
+  #user-menu {
+    margin-left: 840px;
+  }
+
   .small {
     font-size: 11px;
     line-height: 1.2em;
@@ -112,6 +119,26 @@
 
 
 @media (max-width: 979px) {
+  .navbar .nav > li > a, .navbar .dropdown-menu a {
+    font-weight: normal;
+  }
+  #main-menu {
+    float: none;
+    margin: 5px;
+    padding: 15px 0px 15px 0;
+  }
+  .navbar .nav > li {
+    margin-left: none;
+    padding-left: 30px;
+    border-radius: none;
+  }
+  .navbar .nav > li:hover,
+  .navbar .nav > li:hover a,
+  .navbar .nav > li a:hover {
+    background-color: #3d8fc2;
+    border-bottom: none;
+    color: white;
+  }
 }
 
 @media (min-width: 980px) {
