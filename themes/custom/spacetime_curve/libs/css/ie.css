@@ -9,8 +9,41 @@
     background-image : url(../images/background-2000.jpg);
   }
 
-  .span6 {}
+/* drop everything else to 980 */
+  .region-header aside {
+    font-size: 16px;
+  }
+  .region-header aside .small {
+    font-size: 11px;
+    line-height: 1.2em;
+    display: none;
+  }
+  .region-header aside ol {
+    margin: 20px 10px 20px 10px;
+  }
+  #site-name-slogan h1 a {
+    background-image: url(../images/logo-competition-240.png);
+    width: 240px;
+    height: 63px;
+    margin-left: 50px;
+  }  
+  #user-menu {
+    margin-left: 648px;
+  }
+  
+  .region-header aside ol li {
+    margin-bottom: 0.8em;
+  }
+  aside .block-image img {
+    max-width: 118px;
+  }
+  .region-header aside a.logo {
+    background-image: url(../images/logo-uon-166.png);
+    width: 166px;
+    height: 58px;
+  }
+  section a.sponsor img {
+    width: 80px;
+    height: 80px;
+  }
 
-  .span9 {}
-
-  .span3 {}
