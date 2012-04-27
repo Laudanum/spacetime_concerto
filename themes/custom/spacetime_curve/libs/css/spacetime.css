@@ -97,6 +97,8 @@ aside section ul.menu li a:hover,
 
 .navbar-inner {
   background: none;
+  background-image: none;
+  background-color: transparent;
   box-shadow: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
