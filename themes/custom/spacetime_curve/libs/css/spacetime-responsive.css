@@ -145,7 +145,7 @@
   }
   #user-menu li a,
   .navbar .nav > li > a {
-    padding: 0 0 0 30px;
+    padding: 6px 0 6px 30px;
   }
   #user-menu .dropdown-menu,
   .navbar .dropdown-menu {
