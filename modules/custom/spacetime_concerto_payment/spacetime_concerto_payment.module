@@ -40,7 +40,7 @@ function spacetime_concerto_payment_my_entries($args=array()) {
 /*
   Construct the path to the my entries page.
 */  
-function _spacetime_concerto_payment_my_entries_path($edit, $arg = NULL) {
+function _spacetime_concerto_payment_my_entries_path($edit = NULL, $arg = NULL) {
   global $user;
   $uid = $user->uid ? $user->uid : 0;
   return 'user/' . $uid . '/entries';
