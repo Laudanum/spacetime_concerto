@@ -124,7 +124,7 @@
   #main-menu {
     float: none;
     margin: 5px;
-    padding: 15px 0px 15px 0;
+    padding: 0;
     background-color: white;
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 5px;
