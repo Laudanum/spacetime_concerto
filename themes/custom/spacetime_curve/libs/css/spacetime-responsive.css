@@ -95,6 +95,9 @@
     width: 240px;
     height: 63px;
   }
+  #main-menu {
+    margin-right : 30px;
+  }
   #user-menu {
     margin-left: 840px;
   }
@@ -168,6 +171,11 @@
     padding: 6px 0 6px 30px;
     font-size: 14px;
   }
+  section a.sponsor img {
+    width: 60px;
+    height: 60px;
+  }
+
 }
 
 @media (min-width: 980px) {
