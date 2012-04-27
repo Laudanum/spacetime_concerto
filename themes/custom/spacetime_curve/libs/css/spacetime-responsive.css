@@ -126,14 +126,19 @@
     float: none;
     margin: 5px;
     padding: 15px 0px 15px 0;
+    background-color: white;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    border: 1px solid #eeeeee;
   }
   .navbar .nav > li {
-    margin-left: none;
-    padding-left: 30px;
-    border-radius: none;
+    margin-left: 0;
+    border-radius: 0;
   }
-  .navbar .nav > li:hover,
-  .navbar .nav > li:hover a,
+  .navbar .nav > li a {
+    padding-left: 30px;
+    display: block;
+  }
   .navbar .nav > li a:hover {
     background-color: #3d8fc2;
     border-bottom: none;
