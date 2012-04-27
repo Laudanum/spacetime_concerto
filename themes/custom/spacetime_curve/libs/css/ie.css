@@ -3,3 +3,14 @@
   height: 120px;
   filter: none;
 }
+
+/* responsive isnt working so lets get the background back first */
+  body {
+    background-image : url(../images/background-2000.jpg);
+  }
+
+  .span6 {}
+
+  .span9 {}
+
+  .span3 {}
