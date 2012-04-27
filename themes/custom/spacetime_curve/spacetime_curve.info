@@ -25,6 +25,7 @@ features[] = secondary_menu
 stylesheets[all][] = libs/css/spacetime.css
 stylesheets[all][] = libs/css/spacetime-responsive.css
 stylesheets-conditional[IE][all][] = ie.css
+stylesheets-conditional[IE 9][all][] = ie9.css
 
 scripts[] = libs/js/spacetime.js
 
