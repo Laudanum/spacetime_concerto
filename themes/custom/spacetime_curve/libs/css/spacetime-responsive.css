@@ -139,6 +139,12 @@
     display: block;
     border-radius: 0;
   }
+  .navbar .nav > li > a {
+    padding: 0;
+  }
+  .navbar .dropdown-menu {
+    margin: 0;
+  }
   .navbar .nav > li a:hover {
     background-color: #3d8fc2;
     border-bottom: none;
