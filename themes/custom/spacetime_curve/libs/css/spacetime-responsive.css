@@ -127,9 +127,10 @@
     margin: 5px;
     padding: 15px 0px 15px 0;
     background-color: white;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.95);
     border-radius: 5px;
     border: 1px solid #eeeeee;
+    z-index: 10;
   }
   #user-menu li,
   .navbar .nav li {
@@ -144,7 +145,7 @@
   }
   #user-menu li a,
   .navbar .nav > li > a {
-    padding: 0;
+    padding: 0 0 0 30px;
   }
   #user-menu .dropdown-menu,
   .navbar .dropdown-menu {
