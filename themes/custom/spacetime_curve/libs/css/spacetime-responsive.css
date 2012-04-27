@@ -121,8 +121,9 @@
   .navbar .nav > li > a, .navbar .dropdown-menu a {
     font-weight: normal;
   }
+  #user-menu,
   #main-menu {
-    float: none;
+    width: 260px;
     margin: 5px;
     padding: 0;
     background-color: white;
@@ -130,21 +131,26 @@
     border-radius: 5px;
     border: 1px solid #eeeeee;
   }
+  #user-menu li,
   .navbar .nav li {
     margin-left: 0;
     border-radius: 0;
   }
+  #user-menu li a,
   .navbar .nav > li a {
     padding-left: 30px;
     display: block;
     border-radius: 0;
   }
+  #user-menu li a,
   .navbar .nav > li > a {
     padding: 0;
   }
+  #user-menu .dropdown-menu,
   .navbar .dropdown-menu {
     margin: 0;
   }
+  #user-menu li a:hover,
   .navbar .nav > li a:hover {
     background-color: #3d8fc2;
     border-bottom: none;
