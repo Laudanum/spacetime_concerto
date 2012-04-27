@@ -12,5 +12,21 @@
   function spacetime_curve_preprocess_page(&$variables) {
     if ( isset($_REQUEST['render']) )
       $variables['theme_hook_suggestion'] = 'page__render';
+  
+// Add conditional stylesheets for IE.
+  drupal_add_css(
+    drupal_get_path('theme', 'spacetime_curve') . '/libs/css/ie.css',
+    array(
+      'group' => CSS_THEME,
+      'browsers' => array(
+#        'IE' => 'lte IE 7',
+        'IE' => 'IE',
+        '!IE' => FALSE,
+      ),
+      'weight' => 999,
+      'every_page' => TRUE,
+    )
+  );
+
   }
 ?>
