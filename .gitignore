@@ -5,4 +5,4 @@ modules/contrib
 themes/contrib
 modules/developer
 .DS_Store
-
+.idea
