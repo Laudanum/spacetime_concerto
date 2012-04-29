@@ -182,7 +182,11 @@ function _spacetime_concerto_payment_paypal_button($item_name = 'Entry fee', $am
 	$ewpCertPath_ = $module_path . '/private/spacetime-pubcert.pem';
 	$ewpPrivateKeyPath_ = $module_path . '/private/spacetime-prvkey.pem';
 	$ewpPrivateKeyPwd_ = '';
-	$paypalCertPath_ = $module_path . '/private/paypal_cert_pem';
+  if ( $sandbox ) {
+	   $paypalCertPath_ = $module_path . '/private/paypal_cert_pem-sandbox';
+  } else {
+     $paypalCertPath_ = $module_path . '/private/paypal_cert_pem';
+  }
 	$destinationUrl_ = $destinationUrl_;
 	$buttonImageUrl_ = 'http://www.paypalobjects.com/en_US/i/btn/x-click-but22.gif';
 	
