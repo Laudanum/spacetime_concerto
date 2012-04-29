@@ -9,6 +9,7 @@ https://cms.paypal.com/au/cgi-bin/?cmd=_render-content&content_ID=developer/e_ho
 1. Upload to Paypal (business/premiere)
 Profile > Selling preferences > Encrypted Payment Settings
 https://www.sandbox.paypal.com/au/cgi-bin/webscr?cmd=_profile-website-cert
+Profile > My Selling tools > Encrypted Payment Settings
  Your Public Certificates > Add certificate
 1. Store the certificate ID 
 
