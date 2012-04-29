@@ -41,6 +41,8 @@ body.toolbar-drawer header + .container {
   font-weight: normal;
 }
 
+h5, h6 { font-size: 12px; }
+
 #site-name-slogan h1 a {
   margin-top: 20px;
   text-indent: -9999px;
