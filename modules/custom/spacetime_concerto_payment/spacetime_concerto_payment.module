@@ -153,11 +153,12 @@ function spacetime_concerto_payment_preprocess_views_view_fields(&$vars) {
 }
 
 
-function _spacetime_concerto_payment_paypal_button($item_name = 'Entry fee', $amount = '35.00') {
+function _spacetime_concerto_payment_paypal_button($item_name = 'Entry fee', $amount = '30.00') {
   global $user;
   $uid = $user->uid;
   
   $sandbox = FALSE;
+  $encrypted = FALSE;
   if ( $sandbox ) {
 	  $destinationUrl_ = 'https://www.sandbox.paypal.com/cgi-bin/webscr';
 	  $business = 'cnk_1299549188_biz@houseoflaudanum.com';
@@ -179,6 +180,32 @@ function _spacetime_concerto_payment_paypal_button($item_name = 'Entry fee', $am
 	 'add' => 1,
 //	 'email' => $user->email,
 	);
+
+  if ( $encrypted ) {
+    return _spacetime_concerto_payment_paypal_button_encrypted($buttonParams_, $destinationUrl_, $sandbox);
+  } else { 
+    return _spacetime_concerto_payment_paypal_button_clear($buttonParams_, $destinationUrl_, $sandbox);
+  }
+}
+
+
+/* if we use invoice we can prevent users from adding more than one to the cart */
+function _spacetime_concerto_payment_paypal_button_clear($buttonParams_, $destinationUrl_="https://www.paypal.com/cgi-bin/webscr", $sandbox=FALSE) {
+  return '
+<form name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="' . $buttonParams_['cmd'] . '">
+<input type="hidden" name="add" value="' . $buttonParams_['add'] . '">
+<input type="hidden" name="business" value="' . $buttonParams_['business'] . '">
+<input type="hidden" name="currency_code" value="' . $buttonParams_['currency_code'] . '">
+<input type="hidden" name="item_name" value="' . $buttonParams_['item_name'] . '">
+<input type="hidden" name="amount" value="' . $buttonParams_['amount'] . '">
+<input type="image" src="http://www.paypalobjects.com/en_US/i/btn/x-click-but22.gif" border="0" name="submit" alt="Make payments with PayPal - it\'s fast, free and secure!">
+</form>
+  ';
+}
+
+
+function _spacetime_concerto_payment_paypal_button_encrypted($buttonParams_, $destinationUrl_="https://www.paypal.com/cgi-bin/webscr", $sandbox=FALSE) {
 	$ewpPrivateKeyPwd_ = '';
   if ( $sandbox ) {
 	  $paypalCertPath_ = $module_path . '/private/paypal_cert_pem-sandbox';
