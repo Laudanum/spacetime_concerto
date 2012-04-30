@@ -156,7 +156,7 @@ function spacetime_concerto_payment_preprocess_views_view_fields(&$vars) {
 function _spacetime_concerto_payment_paypal_button($item_name = 'Entry fee', $amount = '30.00') {
 
   /* disabled until further notice */
-  return "Payments cannot be accepted at this time. Please check again later."
+  return "Payments cannot be accepted at this time. Please check again later.";
 
   global $user;
   $uid = $user->uid;
