@@ -30,7 +30,7 @@
 ?>
 <!-- template views view fields my entries -->
 <tr>
-  <td>#<?php echo $sid; ?></td>
+  <td>#<?php echo $invoice; ?></td>
   <td><?php echo $submitted; ?></td>
   <td><?php echo $title; ?></td>
   <td>

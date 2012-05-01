@@ -87,6 +87,7 @@ function spacetime_concerto_payment_preprocess_views_view_fields(&$vars) {
 
   if ( $vars['view']->name == 'my_entries') {
     $vars['sid'] = $vars['fields']['sid']->raw;
+    $vars['invoice'] = 'U' . $user->uid . '-' . $vars['fields']['sid']->raw;
 
   //  modules/contrib/webform/includes/webform.submissions.inc:773:    $new_submissions = webform_get_submissions(array('sid' => $sid));
     module_load_include('inc', 'webform', 'includes/webform.submissions');
