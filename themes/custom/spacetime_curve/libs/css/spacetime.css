@@ -359,3 +359,16 @@ form.form-inline label {
 section a.sponsor {
   margin-right: 10px;
 }
+
+.view-my-entries td.invoice_id, 
+.view-my-entries td.edit {
+  width: 70px;
+}
+
+.view-my-entries td.date {
+  width: 110px;
+}
+
+.view-my-entries td.title {
+  width: 200px;
+}

@@ -175,6 +175,13 @@
     width: 60px;
     height: 60px;
   }
+  .view-my-entries td.title {
+    width: 90px;
+  }
+  .view-my-entries td.date {
+    width: 60px;
+  }
+
 
 }
 

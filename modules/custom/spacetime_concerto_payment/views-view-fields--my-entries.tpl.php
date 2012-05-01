@@ -30,10 +30,10 @@
 ?>
 <!-- template views view fields my entries -->
 <tr>
-  <td>#<?php echo $invoice; ?></td>
-  <td><?php echo $submitted; ?></td>
-  <td><?php echo $title; ?></td>
-  <td>
+  <td class="invoice_id">#<?php echo $invoice; ?></td>
+  <td class="date"><?php echo $submitted; ?></td>
+  <td class="title"><?php echo $title; ?></td>
+  <td class="fee">
 <?php
   if ( $payment_complete ):
 ?>
@@ -47,5 +47,5 @@
 <?php endif; ?>
     <?php echo $draft; ?>
   </td>
-  <td><?php echo $view_submission; ?> | <?php echo $edit_submission; ?></td>
+  <td class="edit"><?php echo $view_submission; ?> | <?php echo $edit_submission; ?></td>
 </tr>
