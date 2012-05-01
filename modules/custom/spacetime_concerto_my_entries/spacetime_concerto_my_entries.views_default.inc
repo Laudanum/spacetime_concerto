@@ -23,10 +23,8 @@ function spacetime_concerto_my_entries_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'My entries';
-  $handler->display->display_options['access']['type'] = 'role';
-  $handler->display->display_options['access']['role'] = array(
-    2 => '2',
-  );
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'edit own webform content';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
@@ -40,6 +38,11 @@ function spacetime_concerto_my_entries_views_default_views() {
   $handler->display->display_options['relationships']['uid']['table'] = 'webform_submissions';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   $handler->display->display_options['relationships']['uid']['required'] = 1;
+  /* Relationship: Webform submissions: Node */
+  $handler->display->display_options['relationships']['nid']['id'] = 'nid';
+  $handler->display->display_options['relationships']['nid']['table'] = 'webform_submissions';
+  $handler->display->display_options['relationships']['nid']['field'] = 'nid';
+  $handler->display->display_options['relationships']['nid']['required'] = 1;
   /* Field: Webform submissions: Sid */
   $handler->display->display_options['fields']['sid']['id'] = 'sid';
   $handler->display->display_options['fields']['sid']['table'] = 'webform_submissions';
@@ -187,6 +190,12 @@ function spacetime_concerto_my_entries_views_default_views() {
   $handler->display->display_options['filters']['uid_current']['field'] = 'uid_current';
   $handler->display->display_options['filters']['uid_current']['relationship'] = 'uid';
   $handler->display->display_options['filters']['uid_current']['value'] = '1';
+  /* Filter criterion: Content: Node UUID */
+  $handler->display->display_options['filters']['uuid']['id'] = 'uuid';
+  $handler->display->display_options['filters']['uuid']['table'] = 'node';
+  $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
+  $handler->display->display_options['filters']['uuid']['relationship'] = 'nid';
+  $handler->display->display_options['filters']['uuid']['value'] = 'c471f132-b7c0-6cb4-f5a6-9395f1d03757';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -197,29 +206,6 @@ function spacetime_concerto_my_entries_views_default_views() {
   $handler->display->display_options['menu']['weight'] = '-20';
   $handler->display->display_options['menu']['name'] = 'user-menu';
   $handler->display->display_options['menu']['context'] = 0;
-  $translatables['my_entries'] = array(
-    t('Master'),
-    t('My entries'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('Webform Submission User'),
-    t('Entry number'),
-    t('.'),
-    t(','),
-    t('Submitted'),
-    t('E-mail'),
-    t('Draft'),
-    t('view'),
-    t('edit'),
-    t('Page'),
-  );
   $export['my_entries'] = $view;
 
   return $export;
