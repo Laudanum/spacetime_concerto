@@ -156,6 +156,9 @@ function spacetime_concerto_payment_preprocess_views_view_fields(&$vars) {
 
 function _spacetime_concerto_payment_paypal_button($item_name = 'Entry fee', $amount = '30.00') {
 
+/* Display a link to the PDF until further notice */
+  return '<br>' . l("Payment form", drupal_get_path('theme', 'spacetime_curve') . '/libs/Space_Time_Concerto_payment_form.pdf', array('attributes' => array('class' => 'btn btn-primary'))) . '<br>';
+
   /* disabled until further notice */
   return "<span class='small'>Payments cannot be accepted at this time. Please check again later.</span>";
 
