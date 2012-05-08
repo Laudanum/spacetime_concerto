@@ -4,6 +4,29 @@
   filter: none;
 }
 
+aside,
+.row {
+}
+aside, section {
+  float: left;
+}
+section.span9, section.span6, section.span12 {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.row {
+  clear:both;
+}
+
+aside {
+  background-image: url(../images/background-aside-left-ie.png);
+}
+/* right sidebar */
+section[class*="span"] + aside {
+  background-image: url(../images/background-aside-right-ie.png);
+}
+
 /* responsive isnt working so lets get the background back first */
   body {
     background-image : url(../images/background-2000.jpg);
