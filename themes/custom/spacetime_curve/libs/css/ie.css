@@ -18,6 +18,10 @@ section.span9, section.span6, section.span12 {
 .row {
   clear:both;
 }
+/* responsive menu flown out */
+.nav-collapse.in #main-menu {
+  background-color: #ffffff;
+}
 
 aside {
   background-image: url(../images/background-aside-left-ie.png);
