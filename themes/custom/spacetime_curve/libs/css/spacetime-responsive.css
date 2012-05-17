@@ -191,6 +191,9 @@
     width: 60px;
     height: 60px;
   }
+  section a.sponsor {
+    margin-right: 0px;
+  }
   .view-my-entries td.title {
     width: 90px;
   }
