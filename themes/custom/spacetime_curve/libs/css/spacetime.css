@@ -3,7 +3,7 @@
 blue text 3d8fc2
 */
 
-html {  
+html, p, li {  
   font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
 }
 body {
