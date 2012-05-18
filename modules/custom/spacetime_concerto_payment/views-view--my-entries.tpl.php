@@ -57,8 +57,8 @@
         <th>#</th>
         <th>Date</th>
         <th>Concerto title</th>
-        <th>Entry fee</th>
-        <th>edit | view</th>
+        <th>Status</th>
+        <th>View | Edit</th>
       </thead>
       <?php print $rows; ?>
     </table>
