@@ -9,9 +9,6 @@ bottom: 3%;
 width: auto; 
 margin: 0; 
 }
-.modal-body { 
-height: 60%; 
-}
 
   body {
     background-image : url(../images/background-480.jpg);
@@ -44,9 +41,6 @@ bottom: 3%;
 width: auto; 
 margin: 0; 
 }
-.modal-body { 
-height: 60%; 
-}
 
   body {
     background-image : url(../images/background-768.jpg);
@@ -76,9 +70,6 @@ left: 20%;
 bottom: 10%; 
 width: auto; 
 margin: 0; 
-}
-.modal-body { 
-height: 60%; 
 }
 
   body {
