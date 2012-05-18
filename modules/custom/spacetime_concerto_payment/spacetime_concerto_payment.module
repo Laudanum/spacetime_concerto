@@ -144,7 +144,7 @@ function spacetime_concerto_payment_preprocess_views_view_fields(&$vars) {
 //      $vars['draft'] = $vars['fields']['is_draft']->raw ? "This is a draft entry. " . l("Please don't forget to submit it.", "node/" . $nid . "/submission/" . $vars['sid'] . "/edit") : "";
       $vars['status'] = $vars['fields']['is_draft']->raw 
         ? "This is a draft entry. " . l("Please don't forget to submit it.", "node/" . $nid . "/submission/" . $vars['sid'] . "/edit") 
-        : "Entry submitted. You can " . l("edit this entry.", "node/" . $nid . "/submission/" . $vars['sid'] . "/edit") . " until 1st July 11:59pm";
+        : "Entry submitted. You can " . l("edit this entry", "node/" . $nid . "/submission/" . $vars['sid'] . "/edit") . " until 1st July 11:59pm";
       $vars['payment'] = null;
       $vars['draft'] = null;
 
