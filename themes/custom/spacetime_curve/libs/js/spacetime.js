@@ -3,8 +3,18 @@
 
         modals = 0;
         
+function is_touch_device() {
+  return !!('ontouchstart' in window) ? 1 : 0;
+}
+
 //  load all the modals we need
-        var preloadModal = function(obj) {
+        var preloadModal = function(obj
+
+            if ( is_touch_device() ) {
+                $(obj).removeClass("add-modal").attr("target", "_BLANK");
+                return;
+            }
+            
             uri = $(obj).attr("href");
             if ( ! uri )
                 return false;
