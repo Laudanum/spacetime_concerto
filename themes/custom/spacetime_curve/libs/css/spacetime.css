@@ -374,3 +374,10 @@ section a.sponsor {
 .view-my-entries td.title {
   width: 200px;
 }
+
+.modal-body { 
+max-height: 350px; 
+padding: 15px; 
+overflow-y: auto; 
+-webkit-overflow-scrolling: touch; 
+}
