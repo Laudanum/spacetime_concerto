@@ -53,6 +53,8 @@ h5, h6 { font-size: 12px; }
   position: absolute;
   display: block;
 }
+a.sponsor:hover,
+a.social:hover,
 #site-name-slogan h1 a:hover {
   border: none;
 }
