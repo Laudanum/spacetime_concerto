@@ -34,18 +34,7 @@
   <td class="date"><?php echo $submitted; ?></td>
   <td class="title"><?php echo $title; ?></td>
   <td class="fee">
-<?php
-  if ( $payment_complete ):
-?>
-  Paid <?php echo $payment_date; ?><br />
-<?php else: 
-  $fee = "30.00";
-?>
-  <span class="fee">AUD $<?php echo $fee; ?></span>
-  <?php echo $payment; ?>
-
-<?php endif; ?>
-    <?php echo $draft; ?>
+    <?php echo $status; ?>
   </td>
   <td class="edit"><?php echo $view_submission; ?> | <?php echo $edit_submission; ?></td>
 </tr>
