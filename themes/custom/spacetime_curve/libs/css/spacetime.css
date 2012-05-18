@@ -381,3 +381,7 @@ padding: 15px;
 overflow-y: auto; 
 -webkit-overflow-scrolling: touch; 
 }
+
+div.error {
+  background-image: none;
+}
