@@ -141,8 +141,10 @@ function spacetime_concerto_payment_preprocess_views_view_fields(&$vars) {
       $vars['edit_submission'] = $vars['fields']['edit_submission']->content;
 //      $vars['edit_submission'] = l("edit", "node/" . $nid . "/submission/" . $vars['sid'] . "/edit");
 
-      $vars['draft'] = $vars['fields']['is_draft']->raw ? "This is a draft entry. " . l("Please don't forget to submit it.", "node/" . $nid . "/submission/" . $vars['sid'] . "/edit") : "";
-    
+//      $vars['draft'] = $vars['fields']['is_draft']->raw ? "This is a draft entry. " . l("Please don't forget to submit it.", "node/" . $nid . "/submission/" . $vars['sid'] . "/edit") : "";
+      $vars['status'] = $vars['fields']['is_draft']->raw ? "This is a draft entry. " . l("Please don't forget to submit it.", "node/" . $nid . "/submission/" . $vars['sid'] . "/edit") : "Entry submitted. You can " . l("edit this entry.", "node/" . $nid . "/submission/" . $vars['sid'] . "/edit") . " until 1st July 11:59pm";
+
+/*    
       $vars['payment_date'] = strtotime ($vars['payment_date']);
       $vars['payment_date'] = date("j M Y", $vars['payment_date']);
     
@@ -150,6 +152,7 @@ function spacetime_concerto_payment_preprocess_views_view_fields(&$vars) {
       if ( ! $vars['payment_complete'] ) {
         $vars['payment'] = _spacetime_concerto_payment_paypal_button("Entry fee #" . $vars['sid'] . " @" . $user->name, "30.00");
       }
+*/
     }
 }
 
