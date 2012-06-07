@@ -8,7 +8,7 @@ html, p, li {
 }
 body {
   font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
-  background-color: #efede6;
+  background-color: #000000;
   background-image: url(../images/background-480.jpg);
   background-repeat: no-repeat;
   background-position: center top;
@@ -124,7 +124,7 @@ aside section ul.menu li a:hover,
   margin-left: 30px;
 }
 .navbar .nav > li > a {
-  color: black;
+  color: white;
   text-shadow: none;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -134,8 +134,8 @@ aside section ul.menu li a:hover,
 
 .navbar .nav > li > a:hover,
 .navbar .nav > li.dropdown.open > a {
-  border-bottom: 2px dotted #444444;
-  color : black;
+  border-bottom: 2px dotted #bbbbbb;
+  color : white;
 }
 .navbar .nav > li.dropdown.open > a {
   border-color: transparent;
@@ -151,7 +151,7 @@ aside section ul.menu li a:hover,
   border-radius: 0;
   font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
   font-size: 18px;
-  color: #666666;
+  color: white;
 }
 .region-header aside .small {
   display: block;
@@ -167,6 +167,14 @@ aside section ul.menu li a:hover,
   font-size: 18px;
   padding: 8px 20px 8px 20px;
   margin-left: 20px;
+}
+
+.region-header a,
+.region-header a:hover {
+  color: white;
+}
+.region-header a:hover {
+  border-bottom-color: #bbbbbb;
 }
 .small {
   font-size: 12px;
@@ -233,7 +241,7 @@ aside + section[class*="span"] {
 aside {
   margin-top: 42px;
   background-color: white;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.9);
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -290,7 +298,7 @@ section[class*="span"] + aside {
 #user-menu a.btn {
   background: none;
   border: none;
-  color: black;
+  color: white;
   text-shadow: none;
   box-shadow: none;
 }
