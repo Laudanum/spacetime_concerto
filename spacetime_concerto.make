@@ -38,6 +38,13 @@ projects[features][subdir] = "contrib"
 ; projects[features][patch][986968] = http://drupal.org/files/issues/features.shortcut_sets_0.patch
 projects[strongarm][subdir] = "contrib"
 
+projects[conditional_styles][subdir] = "contrib"
+projects[disable_messages][subdir] = "contrib"
+projects[logintoboggan][subdir] = "contrib"
+projects[jasm][subdir] = "contrib"
+projects[captcha][subdir] = "contrib"
+projects[recaptcha][subdir] = "contrib"
+
 libraries[ckeditor][download][type] = "get"
 libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.4.2/ckeditor_3.4.2.tar.gz"
 
@@ -80,6 +87,12 @@ projects[colorbox][subdir] = "contrib"
 libraries[colorbox][download][type] = "git"
 libraries[colorbox][download][url] = "git://github.com/jackmoore/colorbox.git"
 libraries[colorbox][destination] = "libraries"   
+
+projects[media][subdir] = "contrib"
+projects[media][version] = "2.x-dev"
+projects[file_entity][subdir] = "contrib"
+projects[file_entity][version] = "2.x-dev"
+projects[video_filter][subdir] = "contrib"
 
 projects[imageblock][subdir] = "contrib"
 ; multifile upload

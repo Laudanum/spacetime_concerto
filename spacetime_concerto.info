@@ -96,6 +96,15 @@ dependencies[] = addthis
 ; asset handling
 ; colorbox & libraries
 dependencies[] = colorbox
+dependencies[] = file_entity 
+dependencies[] = media
+dependencies[] = video_filter
+dependencies[] = conditional_styles
+dependencies[] = disable_messages
+dependencies[] = logintoboggan
+dependencies[] = jasm
+dependencies[] = captcha
+dependencies[] = recaptcha
 
 ; multifile upload
 dependencies[] = plupload
