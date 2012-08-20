@@ -497,7 +497,7 @@ ul.carousel {
   list-style: none;
   padding: 0;
   margin: 50px 0 0 0;
-  height: 375px;
+  height: 380px;
   display: block;
 }
 
@@ -505,7 +505,11 @@ ul.carousel {
 ul.carousel li {
   height: 380px;
   color: white;
+  /*
+  text is baked in now
   padding : 25px 25px 0 25px;
+  */
+  overflow: hidden;
   vertical-align: center;
   display: none;
   background-position: top right;
@@ -534,6 +538,7 @@ ul.carousel li .read-more {
   padding-bottom: 12px;
 }
 ul.carousel li img.media-image {
+
 }
 
 .region #block-jasm-fb-like-box iframe{
