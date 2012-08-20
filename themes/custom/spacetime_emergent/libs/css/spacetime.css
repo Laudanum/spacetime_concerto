@@ -20,6 +20,10 @@ body {
   color: #FFF;
 }
 
+p {
+  margin-bottom: 1.8em;
+}
+
 body.toolbar-drawer {
   /*
   for fixed only
@@ -31,6 +35,11 @@ body.toolbar-drawer {
 
 body.toolbar-drawer header + .container {
   margin-top : 65px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 0.5em;
 }
 
 #login-message, a, h1, h2, h3, h4, h5, h6, .page-header {
@@ -412,7 +421,16 @@ div.error {
 /* new changes to homepage */
 
 
-a.read-more{
+body.front article.node {
+  margin-left : 0;
+  margin-right : 0;
+}
+
+body.front .span9 {
+  margin-left: 0;
+}
+
+a.read-more {
   background-color: #535559;
   background-image: url(../images/background-readmore.png);
   background-repeat: no-repeat;
@@ -423,22 +441,34 @@ a.read-more{
   text-decoration: none;
   display: block;
   width: 70px;
+}
+
+a.read-more:hover {
+  background-color: #ff00bd;
+  border-bottom: none;
 
 }
 
-.announcement, 
-.announcement tbody{
+p.read-more {
+  margin-bottom: 0;
+}
+
+.announcement {
   border: none;
-  margin: 20px 0;
 }
 
-.container table tbody{
-  border: none;
+.container table  {
+  border-collapse:separate; 
+  border-spacing: 0 25px; 
 }
 
-.announcement td{
+body.front article.node td {
+  vertical-align: top;
+}
+
+.announcement td {
   border-left: 1px solid #535558;
-  padding: 20px 20px 0;
+  padding: 20px 20px 0 40px;
   vertical-align: top;
   font-size: 14px;
   line-height: 22px;
@@ -467,15 +497,15 @@ a.read-more{
 .concert,
 .concert-top{
   position: relative;
-  margin: 10px 10px 0;
+  padding: 20px 10px 0 25px;
 }
 
 .concert-top{
   margin-bottom: 10px;
 }
 
-.concert td,
-.concert-top td{
+.concert,
+.concert-top{
   position: relative;
   border: 1px solid #535558;
   margin: 0 !important;
