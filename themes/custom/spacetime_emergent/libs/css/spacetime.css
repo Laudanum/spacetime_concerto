@@ -548,6 +548,11 @@ ul.carousel li img.media-image {
 .footer section p{
   text-align: center;
 }
+td.button {
+  padding: 0;
+  border: 1px solid #535558;
+  overflow: hidden;
+}
 
 .concert,
 .concert-top{
