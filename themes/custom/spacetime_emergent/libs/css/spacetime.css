@@ -469,6 +469,7 @@ p.read-more {
 
 body.front article.node td {
   vertical-align: top;
+  width: 50%;
 }
 
 .announcement td {
