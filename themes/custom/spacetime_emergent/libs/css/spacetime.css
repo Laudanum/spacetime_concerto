@@ -543,16 +543,36 @@ ul.carousel li .read-more {
 ul.carousel li img.media-image {
 
 }
-
+.coin-slider {
+  overflow: visible;
+}
 .coin-slider a:hover {
   text-decoration: none;
   border-bottom: none ! important;
 }
+a.cs-navigation-masthead-carousel,
 #cs-navigation-masthead-carousel a {
   background-color: #535558;
   color: #333333;
-  opacity: 0.2;
+  background-image: url(../images/next.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 45px;
+  width: 40px;
+  display: block;
+  text-indent: -9999px;
+  opacity: 1 ! important;
+  margin-right: -8px;
 }
+a.cs-navigation-masthead-carousel.cs-prev,
+#cs-navigation-masthead-carousel a.cs-prev {
+  background-image: url(../images/prev.png);
+  margin-left: -54px;
+  z-index: 100;
+  position: absolute;
+
+}
+a.cs-navigation-masthead-carousel:hover,
 #cs-navigation-masthead-carousel a:hover {
   color: white;
   opacity: 0.6;

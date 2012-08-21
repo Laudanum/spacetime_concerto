@@ -10,13 +10,17 @@ function is_touch_device() {
             width: 1100,
             height: 380,
             delay: 4500,
-            links: false,
+            links: true,
             effect: "straight",
         //    navigation: false,
         //    effect: 'straight',
         };
         $('#masthead-carousel').coinslider(carousel_options);
-
+        /*
+            Move the nav out side of the carousel for the nice positioning indicated by the design.
+        */
+        carousel_parent = $('#masthead-carousel').parent();
+        $('#cs-navigation-masthead-carousel a').addClass('cs-navigation-masthead-carousel').appendTo(carousel_parent);
 
 
 //  load all the modals we need
