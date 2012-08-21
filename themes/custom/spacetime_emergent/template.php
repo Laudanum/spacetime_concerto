@@ -33,4 +33,11 @@
   
 
   }
+
+function spacetime_emergent_css_alter(&$css) {
+  //  profiles/spacetime_concerto/themes/contrib/twitter_bootstrap/bootstrap/css/bootstrap-responsive.css
+  unset($css[drupal_get_path('theme', 'twitter_bootstrap') . '/bootstrap/css/bootstrap-responsive.css']);
+  // Remove defaults.css file.
+  //  unset($css[drupal_get_path('module', 'system') . '/defaults.css']);
+}  
 ?>

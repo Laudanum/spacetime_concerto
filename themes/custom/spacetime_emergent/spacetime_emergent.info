@@ -23,7 +23,8 @@ features[] = main_menu
 ; features[] = secondary_menu
 
 stylesheets[all][] = libs/css/spacetime.css
-stylesheets[all][] = libs/css/spacetime-responsive.css
+; disable responsive (too much work)
+; stylesheets[all][] = libs/css/spacetime-responsive.css
 stylesheets-conditional[IE][all][] = libs/css/ie.css
 ; stylesheets-conditional[IE 9][all][] = ie9.css
 conditional-stylesheets[if IE][all][] = libs/css/ie.css
@@ -32,7 +33,7 @@ conditional-stylesheets[if IE][all][] = libs/css/ie.css
 ;conditional-stylesheets[if lt IE 7][all][] = css/ie/ie6-and-below.css
 
 scripts[] = libs/js/spacetime.js
-scripts[] = libs/js/respond.min.js
+; scripts[] = libs/js/respond.min.js
 
 settings[toggle_name] = 1
 settings[toggle_search] = 0
