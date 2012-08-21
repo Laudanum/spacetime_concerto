@@ -501,6 +501,7 @@ ul.carousel {
   margin: 50px 0 0 0;
   height: 380px;
   display: block;
+  overflow: hidden;
 }
 
 .region-header ul li,

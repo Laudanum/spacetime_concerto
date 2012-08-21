@@ -8,7 +8,7 @@ function is_touch_device() {
 }
         carousel_options = {
             width: 1100,
-            height: 400,
+            height: 380,
             delay: 4500,
             links: false,
             effect: "straight",
