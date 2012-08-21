@@ -486,6 +486,9 @@ body.front article.node {
 body.front .span9 {
   margin-left: 0;
 }
+body.not-front .span9 {
+  margin-top: 3em;
+}
 
 body.front .page-header {
   display: none;
