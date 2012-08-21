@@ -13,14 +13,14 @@ regions[sidebar_first]  = 'Primary'
 regions[sidebar_second] = 'Secondary'
 regions[footer]         = 'Footer'
 
-; features[] = logo
+features[] = logo
 features[] = name
 features[] = slogan
 ; features[] = node_user_picture
 ; features[] = comment_user_picture
 features[] = favicon
 features[] = main_menu
-features[] = secondary_menu
+; features[] = secondary_menu
 
 stylesheets[all][] = libs/css/spacetime.css
 stylesheets[all][] = libs/css/spacetime-responsive.css

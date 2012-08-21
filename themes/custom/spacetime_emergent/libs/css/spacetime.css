@@ -55,6 +55,7 @@ h5, h6 { font-size: 12px; }
 
 #site-name-slogan h1 a {
   margin-top: 20px;
+  margin-left: -2px;
   text-indent: -9999px;
   background-image: url(../images/logo-competition.png);
   background-repeat: no-repeat;
@@ -121,6 +122,12 @@ aside section ul.menu li a:hover,
 
 .navbar .brand {
   color: black;
+  float: right;
+  margin-right: 32px;
+}
+
+.navbar a.brand:hover {
+  border-bottom: none;
 }
 
 #main-menu {
