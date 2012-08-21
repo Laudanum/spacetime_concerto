@@ -59,8 +59,8 @@ h5, h6 { font-size: 12px; }
   text-indent: -9999px;
   background-image: url(../images/logo-competition.png);
   background-repeat: no-repeat;
-  width: 357px;
-  height: 94px;
+  width: 406px;
+  height: 99px;
   position: absolute;
   display: block;
 }
@@ -418,6 +418,9 @@ max-height: 350px;
 padding: 15px; 
 overflow-y: auto; 
 -webkit-overflow-scrolling: touch; 
+}
+.modal-header, .modal-header h3, .modal-body, .modal-body h4 { 
+color: #444444;
 }
 
 div.error {
