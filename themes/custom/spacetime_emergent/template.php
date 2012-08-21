@@ -1,6 +1,8 @@
 <?php
   function spacetime_emergent_preprocess_html(&$variables) {
     drupal_add_css('http://fonts.googleapis.com/css?family=Ubuntu:400,500,400italic,500italic', array('type' => 'external'));
+    drupal_add_css('profiles/spacetime_concerto/themes/custom/spacetime_emergent/libs/js/coin-slider/coin-slider-styles.css', array('type' => 'file'));
+    drupal_add_js('profiles/spacetime_concerto/themes/custom/spacetime_emergent/libs/js/coin-slider/coin-slider.js', array('type' => 'file'));
     if ( isset($_REQUEST['render']) )
       $variables['theme_hook_suggestion'] = 'html__render';
 

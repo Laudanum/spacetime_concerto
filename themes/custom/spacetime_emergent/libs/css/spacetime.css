@@ -491,6 +491,7 @@ body.front article.node td {
 .region-header, .region-header section {
   width: 100%;
 }
+ul#masthead-carousel,
 ul.carousel {
   width: 1100px;
   background-color: black;
@@ -542,6 +543,41 @@ ul.carousel li img.media-image {
 
 }
 
+.coin-slider a:hover {
+  text-decoration: none;
+  border-bottom: none ! important;
+}
+#cs-navigation-masthead-carousel a {
+  background-color: #535558;
+  color: #333333;
+  opacity: 0.2;
+}
+#cs-navigation-masthead-carousel a:hover {
+  color: white;
+  opacity: 0.6;
+}
+.cs-buttons {
+  margin-top: -56px;
+  left: 85%;
+}
+.cs-buttons a.cs-button-masthead-carousel {
+  width: 8px;
+  height: 8px;
+  margin-left: 10px;
+  border-radius: 50%;
+  -moz-box-shadow:  1px 1px 1px 1px rgba(255, 255, 255, .2);        
+  -webkit-box-shadow:  1px 1px 1px 1px rgba(255, 255, 255, .2);        
+  box-shadow:  1px 1px 1px 1px rgba(255, 255, 255, .2);
+  background-color: #535558;
+  border-color: #535558;
+}
+.cs-buttons a.cs-button-masthead-carousel.cs-active {
+  background-color: white;
+  border-color: white;
+  -moz-box-shadow:  1px 1px 1px 1px rgba(0, 0, 0, .2);        
+  -webkit-box-shadow:  1px 1px 1px 1px rgba(0, 0, 0, .2);        
+  box-shadow:  1px 1px 1px 1px rgba(0, 0, 0, .2);
+}
 .region #block-jasm-fb-like-box iframe{
   background-color: white;
 }

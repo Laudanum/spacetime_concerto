@@ -6,6 +6,18 @@
 function is_touch_device() {
   return !!('ontouchstart' in window) ? 1 : 0;
 }
+        carousel_options = {
+            width: 1100,
+            height: 400,
+            delay: 4500,
+            links: false,
+            effect: "straight",
+        //    navigation: false,
+        //    effect: 'straight',
+        };
+        $('#masthead-carousel').coinslider(carousel_options);
+
+
 
 //  load all the modals we need
         var preloadModal = function(obj) {
