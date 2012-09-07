@@ -533,7 +533,7 @@ p.read-more {
 
 .container table  {
   border-collapse:separate; 
-  border-spacing: 0 25px; 
+  border-spacing: 0 0px; 
 }
 
 body.front article.node td {
@@ -543,7 +543,7 @@ body.front article.node td {
 
 .announcement td {
   border-left: 1px solid #535558;
-  padding: 20px 20px 0 40px;
+  padding: 10px 20px 20px 40px;
   vertical-align: top;
   font-size: 14px;
   line-height: 22px;
