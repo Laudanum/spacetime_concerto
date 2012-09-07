@@ -312,6 +312,9 @@ aside {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
+aside.span3 {
+  margin-top: 0;
+}
 
 aside section {
   -moz-border-radius: 0px;
