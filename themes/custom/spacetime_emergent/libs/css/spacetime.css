@@ -427,6 +427,9 @@ div.error {
   
 }
 
+label {
+  color: white;
+}
 form.form-inline label {
   min-width: 60px;
 }
