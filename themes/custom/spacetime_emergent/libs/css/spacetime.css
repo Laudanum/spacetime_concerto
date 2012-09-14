@@ -679,8 +679,12 @@ a.cs-navigation-masthead-carousel:hover,
 }
 td.button {
   padding: 0;
-  border: 1px solid #535558;
+  padding-bottom: 20px;
   overflow: hidden;
+}
+
+td.button img.media-image{
+border: 1px solid #535558;
 }
 
 .concert,
