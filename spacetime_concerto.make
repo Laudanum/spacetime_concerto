@@ -73,7 +73,6 @@ libraries[campaignmonitor][download][branch] = 1.0.11
 
 ; developer
 projects[devel][subdir] = "developer"
-projects[coder][subdir] = "developer"
 projects[devel_themer][subdir] = "developer"
 projects[module_filter][subdir] = "developer"
 
